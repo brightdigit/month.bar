@@ -1,0 +1,109 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = 'MonthBar - Track your month\'s progress',
+  description = 'Stay aware of how much of the month has passed with MonthBar, a minimal macOS MenuBar app that shows your monthly progress at a glance.',
+  image = '/images/app-icon/og-image.png'
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImageURL = new URL(image, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="month,progress,tracker,menubar,calendar,time,productivity,widget,days,goals,deadline,simple" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImageURL} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={socialImageURL} />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "MonthBar",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "macOS",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Stay aware of how much of the month has passed with MonthBar, a minimal macOS MenuBar app that shows your monthly progress at a glance."
+      }
+    </script>
+  </head>
+  <body>
+    <div class="min-h-screen flex flex-col">
+      <header class="border-b border-apple-gray-200 dark:border-apple-gray-800">
+        <nav class="container py-4">
+          <div class="flex items-center justify-between">
+            <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+              <img
+                src="/images/app-icon/icon-512.png"
+                alt="MonthBar Icon"
+                class="w-8 h-8 rounded-lg"
+              />
+              <span class="text-xl font-semibold text-apple-gray-900 dark:text-apple-gray-50">MonthBar</span>
+            </a>
+            <div class="flex items-center gap-6">
+              <a href="/privacy" class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue transition-colors">Privacy</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <main class="flex-1">
+        <slot />
+      </main>
+
+      <footer class="border-t border-apple-gray-200 dark:border-apple-gray-800 mt-16">
+        <div class="container py-8">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="text-sm text-apple-gray-600 dark:text-apple-gray-400">
+              © 2026 BrightDigit. All rights reserved.
+            </div>
+            <div class="flex items-center gap-6 text-sm">
+              <a
+                href="/privacy"
+                class="text-apple-gray-600 dark:text-apple-gray-400 hover:text-apple-blue transition-colors"
+              >
+                Privacy Policy
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

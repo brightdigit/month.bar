@@ -1,0 +1,102 @@
+---
+interface Screenshot {
+  name: string;
+  alt: string;
+}
+
+const screenshots: Screenshot[] = [
+  { name: 'pie-elapsed', alt: 'MonthBar with pie chart showing elapsed time' },
+  { name: 'pie-remaining', alt: 'MonthBar with pie chart showing remaining time' },
+  { name: 'percent-elapsed', alt: 'MonthBar with percentage showing elapsed time' },
+  { name: 'percent-remaining', alt: 'MonthBar with percentage showing remaining time' },
+  { name: 'no-menu', alt: 'MonthBar in MenuBar without menu open' }
+];
+---
+
+<div class="slideshow-container overflow-hidden relative bg-apple-gray-50 dark:bg-apple-gray-900">
+  {screenshots.map((screenshot, index) => (
+    <picture class={`slideshow-image ${index === 0 ? 'active' : ''}`} data-index={index}>
+      <source
+        media="(prefers-color-scheme: dark)"
+        srcset={`/images/screenshots/dark-mode/${screenshot.name}.webp`}
+      />
+      <img
+        src={`/images/screenshots/light-mode/${screenshot.name}.webp`}
+        alt={screenshot.alt}
+        class="w-full h-auto"
+        loading={index === 0 ? 'eager' : 'lazy'}
+      />
+    </picture>
+  ))}
+</div>
+
+<style>
+  .slideshow-container {
+    position: relative;
+    aspect-ratio: 16 / 10;
+  }
+
+  .slideshow-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    pointer-events: none;
+  }
+
+  .slideshow-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .slideshow-image.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1;
+  }
+
+  .slideshow-image:first-child {
+    position: relative;
+  }
+
+</style>
+
+<script>
+  // Auto-advance slideshow
+  let currentIndex = 0;
+  const images = document.querySelectorAll('.slideshow-image');
+  const totalImages = images.length;
+  const interval = 3000; // 3 seconds
+
+  function showImage(index: number) {
+    // Remove active class from all
+    images.forEach(img => img.classList.remove('active'));
+
+    // Add active class to current
+    images[index].classList.add('active');
+
+    currentIndex = index;
+  }
+
+  function nextImage() {
+    const next = (currentIndex + 1) % totalImages;
+    showImage(next);
+  }
+
+  // Auto-advance
+  let autoAdvance = setInterval(nextImage, interval);
+
+  // Pause on hover
+  const container = document.querySelector('.slideshow-container');
+  container?.addEventListener('mouseenter', () => {
+    clearInterval(autoAdvance);
+  });
+
+  container?.addEventListener('mouseleave', () => {
+    autoAdvance = setInterval(nextImage, interval);
+  });
+</script>
