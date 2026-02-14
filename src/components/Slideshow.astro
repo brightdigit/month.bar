@@ -4,6 +4,13 @@ interface Screenshot {
   alt: string;
 }
 
+interface Props {
+  interval?: number;
+  pauseOnHover?: boolean;
+}
+
+const { interval = 3000, pauseOnHover = true } = Astro.props;
+
 const screenshots: Screenshot[] = [
   { name: 'pie-elapsed', alt: 'MonthBar with pie chart showing elapsed time' },
   { name: 'pie-remaining', alt: 'MonthBar with pie chart showing remaining time' },
@@ -13,7 +20,14 @@ const screenshots: Screenshot[] = [
 ];
 ---
 
-<div class="slideshow-container overflow-hidden relative bg-apple-gray-50 dark:bg-apple-gray-900">
+<div
+  class="slideshow-container overflow-hidden relative bg-apple-gray-50 dark:bg-apple-gray-900"
+  role="region"
+  aria-label="App screenshots slideshow"
+  aria-live="polite"
+  data-interval={interval}
+  data-pause-on-hover={pauseOnHover}
+>
   {screenshots.map((screenshot, index) => (
     <picture class={`slideshow-image ${index === 0 ? 'active' : ''}`} data-index={index}>
       <source
@@ -63,40 +77,136 @@ const screenshots: Screenshot[] = [
     position: relative;
   }
 
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .slideshow-image {
+      transition: opacity 0.1s ease-in-out;
+    }
+  }
 </style>
 
 <script>
-  // Auto-advance slideshow
-  let currentIndex = 0;
-  const images = document.querySelectorAll('.slideshow-image');
-  const totalImages = images.length;
-  const interval = 3000; // 3 seconds
-
-  function showImage(index: number) {
-    // Remove active class from all
-    images.forEach(img => img.classList.remove('active'));
-
-    // Add active class to current
-    images[index].classList.add('active');
-
-    currentIndex = index;
-  }
-
-  function nextImage() {
-    const next = (currentIndex + 1) % totalImages;
-    showImage(next);
-  }
-
-  // Auto-advance
-  let autoAdvance = setInterval(nextImage, interval);
-
-  // Pause on hover
+  // Slideshow with accessibility and robustness improvements
   const container = document.querySelector('.slideshow-container');
-  container?.addEventListener('mouseenter', () => {
-    clearInterval(autoAdvance);
-  });
 
-  container?.addEventListener('mouseleave', () => {
-    autoAdvance = setInterval(nextImage, interval);
-  });
+  if (!container) {
+    console.warn('Slideshow: container not found');
+  } else {
+    const images = container.querySelectorAll('.slideshow-image');
+
+    if (images.length === 0) {
+      console.warn('Slideshow: no images found');
+    } else {
+      let currentIndex = 0;
+      const totalImages = images.length;
+
+      // Read configuration from data attributes
+      const interval = parseInt(container.getAttribute('data-interval') || '3000', 10);
+      const pauseOnHover = container.getAttribute('data-pause-on-hover') !== 'false';
+
+      // Check if user prefers reduced motion
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      let autoAdvanceInterval: number | null = null;
+      let isPaused = false;
+
+      // Make container keyboard-focusable
+      container.setAttribute('tabindex', '0');
+
+      function showImage(index: number) {
+        // Remove active class from all
+        images.forEach(img => img.classList.remove('active'));
+
+        // Add active class to current
+        images[index].classList.add('active');
+
+        currentIndex = index;
+
+        // Update ARIA label for screen readers
+        const currentAlt = images[index].querySelector('img')?.getAttribute('alt') || '';
+        container.setAttribute('aria-label', `App screenshots slideshow: ${currentAlt} (${index + 1} of ${totalImages})`);
+      }
+
+      function nextImage() {
+        const next = (currentIndex + 1) % totalImages;
+        showImage(next);
+      }
+
+      function prevImage() {
+        const prev = (currentIndex - 1 + totalImages) % totalImages;
+        showImage(prev);
+      }
+
+      function startAutoAdvance() {
+        if (autoAdvanceInterval === null && !prefersReducedMotion) {
+          autoAdvanceInterval = window.setInterval(nextImage, interval);
+          isPaused = false;
+        }
+      }
+
+      function stopAutoAdvance() {
+        if (autoAdvanceInterval !== null) {
+          clearInterval(autoAdvanceInterval);
+          autoAdvanceInterval = null;
+          isPaused = true;
+        }
+      }
+
+      // Start auto-advance (unless user prefers reduced motion)
+      if (!prefersReducedMotion) {
+        startAutoAdvance();
+      }
+
+      // Pause on hover
+      if (pauseOnHover) {
+        container.addEventListener('mouseenter', stopAutoAdvance);
+        container.addEventListener('mouseleave', startAutoAdvance);
+      }
+
+      // Keyboard navigation
+      container.addEventListener('keydown', (e) => {
+        switch (e.key) {
+          case 'ArrowLeft':
+          case 'ArrowUp':
+            e.preventDefault();
+            prevImage();
+            stopAutoAdvance();
+            break;
+          case 'ArrowRight':
+          case 'ArrowDown':
+            e.preventDefault();
+            nextImage();
+            stopAutoAdvance();
+            break;
+          case ' ':
+          case 'Enter':
+            e.preventDefault();
+            if (isPaused || prefersReducedMotion) {
+              startAutoAdvance();
+            } else {
+              stopAutoAdvance();
+            }
+            break;
+        }
+      });
+
+      // Pause when tab is hidden (save resources)
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          stopAutoAdvance();
+        } else if (!isPaused && !prefersReducedMotion) {
+          startAutoAdvance();
+        }
+      });
+
+      // Cleanup on page unload
+      window.addEventListener('beforeunload', () => {
+        stopAutoAdvance();
+      });
+
+      // Set initial ARIA label
+      const firstAlt = images[0].querySelector('img')?.getAttribute('alt') || '';
+      container.setAttribute('aria-label', `App screenshots slideshow: ${firstAlt} (1 of ${totalImages})`);
+    }
+  }
 </script>

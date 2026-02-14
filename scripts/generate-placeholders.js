@@ -243,59 +243,34 @@ function generateFaviconSVG() {
 }
 
 // Generate all files
-console.log('Generating placeholder images...\n');
+console.log('Generating SVG placeholder images...\n');
 
 // App icons
-console.log('Creating app icons...');
+console.log('Creating app icon SVG placeholders...');
 fs.writeFileSync(path.join(iconDir, 'icon-512.svg'), generateIconSVG(512));
 fs.writeFileSync(path.join(iconDir, 'icon-1024.svg'), generateIconSVG(1024));
 console.log('✓ icon-512.svg');
 console.log('✓ icon-1024.svg');
 
-// Create PNG versions as copies of SVG (browsers will render them)
-fs.copyFileSync(
-  path.join(iconDir, 'icon-512.svg'),
-  path.join(iconDir, 'icon-512.png')
-);
-fs.copyFileSync(
-  path.join(iconDir, 'icon-1024.svg'),
-  path.join(iconDir, 'icon-1024.png')
-);
-console.log('✓ icon-512.png (SVG copy)');
-console.log('✓ icon-1024.png (SVG copy)');
-
 // OG image
-console.log('\nCreating OG image...');
+console.log('\nCreating OG image SVG placeholder...');
 fs.writeFileSync(path.join(iconDir, 'og-image.svg'), generateOGImageSVG());
-fs.copyFileSync(
-  path.join(iconDir, 'og-image.svg'),
-  path.join(iconDir, 'og-image.png')
-);
-console.log('✓ og-image.png');
+console.log('✓ og-image.svg');
 
 // Favicon
-console.log('\nCreating favicon...');
+console.log('\nCreating favicon SVG...');
 fs.writeFileSync(path.join(publicDir, 'favicon.svg'), generateFaviconSVG());
-// Modern browsers support SVG favicons, so we'll use .ico extension with SVG content
-fs.copyFileSync(
-  path.join(publicDir, 'favicon.svg'),
-  path.join(publicDir, 'favicon.ico')
-);
-console.log('✓ favicon.ico');
+console.log('✓ favicon.svg');
 
 // Screenshots
-console.log('\nCreating screenshots...');
+console.log('\nCreating screenshot SVG placeholders...');
 for (let i = 1; i <= 3; i++) {
   const filename = `screenshot-${i}.svg`;
   fs.writeFileSync(path.join(screenshotsDir, filename), generateScreenshotSVG(i));
-  // Create PNG copy
-  fs.copyFileSync(
-    path.join(screenshotsDir, filename),
-    path.join(screenshotsDir, `screenshot-${i}.png`)
-  );
-  console.log(`✓ screenshot-${i}.png`);
+  console.log(`✓ ${filename}`);
 }
 
-console.log('\n✅ All placeholder images generated successfully!');
-console.log('\nNote: SVG files are being used with .png extensions for browser compatibility.');
-console.log('Replace these with real assets when available from the MonthBar Xcode project.\n');
+console.log('\n✅ All SVG placeholder images generated successfully!');
+console.log('\nNote: These are SVG placeholders for development.');
+console.log('Real PNG assets exist in public/images/app-icon/appicon-exports/');
+console.log('Replace placeholders with production assets when ready.\n');
