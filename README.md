@@ -1,87 +1,166 @@
 # MonthBar Website
 
-Static website for [MonthBar](https://github.com/brightdigit/MonthBar) - a macOS MenuBar app that displays the progress of the current month.
+Static marketing website for **MonthBar** - a macOS MenuBar app that displays the progress of the current month.
 
-## Repository Structure
+Built with [Astro](https://astro.build) and deployed to GitHub Pages.
+
+## 🚀 Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Generate placeholder images
+npm run generate:placeholders
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## 📁 Project Structure
 
 ```
 month.bar/
-├── content/                      # Marketing content source files
-│   ├── privacy.md               # Privacy policy (from MonthBar repo)
-│   ├── app-store-metadata.md    # App Store copy, descriptions, keywords
-│   └── features.md              # Feature documentation (from README.md)
-├── public/                       # Static assets (will be served as-is)
-│   └── images/
-│       ├── app-icon/            # App icon exports (TODO: export from MonthBar)
-│       └── screenshots/         # App screenshots (TODO: create per specs)
-└── README.md                     # This file
+├── .github/
+│   └── workflows/
+│       └── deploy.yml          # GitHub Actions deployment workflow
+├── content/                    # Original marketing content (reference only)
+│   ├── privacy.md
+│   ├── app-store-metadata.md
+│   └── features.md
+├── public/
+│   ├── images/
+│   │   ├── app-icon/           # App icons (512, 1024, og-image, favicon)
+│   │   └── screenshots/        # App screenshots (3 screenshots)
+│   └── robots.txt              # SEO robots file
+├── scripts/
+│   └── generate-placeholders.js # Placeholder image generator
+├── src/
+│   ├── components/             # Reusable Astro components
+│   │   ├── FeatureCard.astro
+│   │   ├── Features.astro
+│   │   └── Hero.astro
+│   ├── content/
+│   │   ├── config.ts           # Content collection schema
+│   │   └── docs/
+│   │       └── privacy.md      # Privacy policy content
+│   ├── layouts/
+│   │   ├── BaseLayout.astro    # Base layout with SEO
+│   │   └── ContentLayout.astro # Layout for markdown content
+│   ├── pages/
+│   │   ├── index.astro         # Homepage
+│   │   ├── privacy.astro       # Privacy policy page
+│   │   └── 404.astro           # 404 error page
+│   └── styles/
+│       └── global.css          # Global styles and design system
+├── astro.config.mjs            # Astro configuration
+├── tailwind.config.mjs         # Tailwind CSS configuration
+├── tsconfig.json               # TypeScript configuration
+└── package.json
 ```
 
-## Content Attribution
+## 🎨 Design System
 
-All marketing content sourced from the [MonthBar repository](https://github.com/brightdigit/MonthBar) at commit `6717a9d` (February 11, 2026).
+The website uses a macOS-inspired design system with:
 
-Original content by Leo Dion.
+- **Colors**: Apple-inspired palette with Apple Blue (#0071e3) accent
+- **Typography**: System font stack (-apple-system, BlinkMacSystemFont, etc.)
+- **Dark Mode**: Automatic based on system preference (prefers-color-scheme)
+- **Responsive**: Mobile-first design with breakpoints for tablet/desktop
 
-## TODO: Before Website Launch
+## 🖼️ Placeholder Images
 
-### 1. Export App Icon
-The app icon needs to be exported from the MonthBar Xcode project:
-- Export from `Resources/Assets.xcassets/AppIcon.appiconset`
-- Generate PNG files: 512x512, 1024x1024
-- Generate favicon.ico from app icon
-- Place in `public/images/app-icon/`
+Current placeholder images are SVG-based with "PREVIEW" watermarks. To replace with real assets:
 
-### 2. Create Screenshots
-Screenshots are specified but not yet created. See `MonthBar/specs/002-app-store-ready/MARKETING_ASSETS_SPECS.md` for:
-- Technical requirements (2560x1600px minimum)
-- Composition guidelines (Modern Minimalist aesthetic)
-- Shot list (5 screenshots: Light/Dark mode, icon styles, settings)
-- Production procedures
+1. Export app icons from MonthBar Xcode project:
+   - `MonthBar/Resources/Assets.xcassets/AppIcon.appiconset`
+   - Export at 512x512 and 1024x1024
+   - Replace files in `public/images/app-icon/`
 
-Once created, copy from `MonthBar/Marketing/Screenshots/` to `public/images/screenshots/`
+2. Create screenshots (2560x1600 minimum):
+   - Follow specs in MonthBar repository
+   - Replace files in `public/images/screenshots/`
 
-### 3. Choose Static Site Generator
-Options:
-- **Astro** (recommended for content-focused sites)
-- **Hugo** (fast, Go-based)
-- **Eleventy** (JavaScript, flexible)
-- **Jekyll** (Ruby, GitHub Pages native)
+3. Rebuild and deploy:
+   ```bash
+   npm run build
+   git add public/images/
+   git commit -m "Replace placeholder images with real assets"
+   git push
+   ```
 
-### 4. Set Up Deployment
-Options:
-- **Vercel** (automatic preview deployments)
-- **Netlify** (easy setup, CDN)
-- **Cloudflare Pages** (fast, free tier)
-- **GitHub Pages** (free, easy for simple sites)
+## 🔍 SEO Features
 
-Planned URL from metadata: `https://brightdigit.github.io/MonthBar/privacy-policy.html`
+- Semantic HTML5 structure
+- Open Graph meta tags for social sharing
+- Twitter Card meta tags
+- JSON-LD structured data
+- Sitemap generation
+- robots.txt configuration
+- Optimized meta descriptions and keywords
 
-## MonthBar App Info
+## 🚀 Deployment
 
-**What it does:** Displays current month progress in the macOS MenuBar with customizable display modes.
+The site is automatically deployed to GitHub Pages via GitHub Actions when pushing to the `main` branch.
 
-**Key Features:**
-- Two icon styles (Pie Chart, Percentage Text)
-- Toggle between remaining/elapsed time
-- Privacy-first (no network, no tracking)
-- Native macOS app built with SwiftUI
+**Deployment URL**: https://month.bar
 
-**Download:** [App Store link - TBD]
+### GitHub Pages Setup
 
-**Support:** [GitHub Issues](https://github.com/brightdigit/MonthBar/issues)
+1. Enable GitHub Pages in repository settings:
+   - Settings > Pages
+   - Source: GitHub Actions
 
-## Development
+2. Push to `main` branch to trigger deployment:
+   ```bash
+   git push origin main
+   ```
 
-Once you set up a static site generator, add build and development instructions here.
+3. Monitor deployment at Actions tab
 
-```bash
-# Example (will vary by SSG choice):
-npm install
-npm run dev      # Start development server
-npm run build    # Build for production
+## 📝 Content Updates
+
+### Privacy Policy
+
+Edit `src/content/docs/privacy.md` with frontmatter:
+
+```yaml
+---
+title: "Privacy Policy"
+description: "MonthBar privacy policy and data practices"
+lastUpdated: 2026-02-10
+---
 ```
 
-## License
+### Features
+
+Edit features in `src/components/Features.astro` (features array).
+
+### SEO Metadata
+
+Edit meta tags in `src/layouts/BaseLayout.astro`.
+
+## 🛠️ Development
+
+Built with:
+- **Astro** - Static site generator
+- **Tailwind CSS** - Utility-first CSS framework
+- **TypeScript** - Type-safe development
+- **Content Collections** - Type-safe markdown content
+
+## 📄 License
 
 Copyright (c) 2026 Leo Dion
+
+## 🔗 Links
+
+- [Website Repository](https://github.com/brightdigit/month.bar)
+- [MonthBar App Repository](https://github.com/brightdigit/MonthBar)
+- [MonthBar Website](https://month.bar)
+- [Report Issues](https://github.com/brightdigit/MonthBar/issues)

@@ -1,0 +1,38 @@
+{
+  "name": "month.bar",
+  "version": "1.0.0",
+  "description": "Static website for [MonthBar](https://github.com/brightdigit/MonthBar) - a macOS MenuBar app that displays the progress of the current month.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "generate:placeholders": "node scripts/generate-placeholders.js",
+    "lighthouse": "lhci autorun"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brightdigit/month.bar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brightdigit/month.bar/issues"
+  },
+  "homepage": "https://github.com/brightdigit/month.bar#readme",
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.0",
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^5.17.2",
+    "tailwindcss": "^3.4.19"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.13.0",
+    "@types/node": "^25.2.3",
+    "prettier": "^3.8.1",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^5.9.3"
+  }
+}
