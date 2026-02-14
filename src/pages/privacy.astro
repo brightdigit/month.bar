@@ -1,0 +1,11 @@
+---
+import { getEntry } from 'astro:content';
+import ContentLayout from '../layouts/ContentLayout.astro';
+
+const entry = await getEntry('docs', 'privacy');
+const { Content } = await entry.render();
+---
+
+<ContentLayout title="Privacy Policy" description={entry.data.description}>
+  <Content />
+</ContentLayout>
