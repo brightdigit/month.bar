@@ -41,6 +41,7 @@ const screenshots: Screenshot[] = [
         height="1000"
         class="w-full h-auto"
         loading={index === 0 ? 'eager' : 'lazy'}
+        onerror="this.style.opacity='0.3'; this.alt='Screenshot not yet available';"
       />
     </picture>
   ))}
