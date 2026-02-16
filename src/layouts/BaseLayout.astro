@@ -10,7 +10,7 @@ interface Props {
 const {
   title = 'MonthBar - Track your month\'s progress',
   description = 'Stay aware of how much of the month has passed with MonthBar, a minimal macOS MenuBar app that shows your monthly progress at a glance.',
-  image = '/images/app-icon/og-image.png'
+  image = '/images/app-icon/og-image.webp'
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -22,6 +22,7 @@ const socialImageURL = new URL(image, Astro.site);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; font-src 'self'; connect-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self';" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
 
@@ -69,11 +70,16 @@ const socialImageURL = new URL(image, Astro.site);
         <nav class="container py-4">
           <div class="flex items-center justify-between">
             <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <img
-                src="/images/app-icon/icon-512.png"
-                alt="MonthBar Icon"
-                class="w-8 h-8 rounded-lg"
-              />
+              <picture>
+                <source srcset="/images/app-icon/icon-512.webp" type="image/webp" />
+                <img
+                  src="/images/app-icon/icon-512.png"
+                  alt="MonthBar Icon"
+                  width="32"
+                  height="32"
+                  class="w-8 h-8 rounded-lg"
+                />
+              </picture>
               <span class="text-xl font-semibold text-apple-gray-900 dark:text-apple-gray-50">MonthBar</span>
             </a>
             <div class="flex items-center gap-6">
