@@ -6,6 +6,7 @@
  */
 
 import sharp from 'sharp';
+import toIco from 'to-ico';
 import { writeFileSync, mkdirSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
@@ -26,6 +27,9 @@ console.log('🎨 Generating favicons...');
 
 async function generateFavicons() {
   try {
+    // Ensure output directory exists
+    mkdirSync(iconDir, { recursive: true });
+
     // Generate PNG favicons
     for (const favicon of favicons) {
       const outputPath = join(iconDir, favicon.name);
@@ -40,8 +44,7 @@ async function generateFavicons() {
       console.log(`  ✓ Generated ${favicon.name} (${favicon.size}x${favicon.size})`);
     }
 
-    // Generate multi-size favicon.ico
-    // ICO format needs special handling - create 16x16, 32x32, 48x48
+    // Generate multi-size favicon.ico with proper ICO format
     const icoSizes = [16, 32, 48];
     const icoBuffers = [];
 
@@ -56,18 +59,10 @@ async function generateFavicons() {
       icoBuffers.push(buffer);
     }
 
-    // For now, just use the 32x32 as favicon.ico
-    // Full ICO format requires a library like to-ico
-    const favicon32 = await sharp(sourceIcon)
-      .resize(32, 32, {
-        fit: 'contain',
-        background: { r: 0, g: 0, b: 0, alpha: 0 }
-      })
-      .png()
-      .toBuffer();
-
-    writeFileSync(join(publicDir, 'favicon.ico'), favicon32);
-    console.log('  ✓ Generated favicon.ico');
+    // Create proper multi-resolution ICO file
+    const icoBuffer = await toIco(icoBuffers);
+    writeFileSync(join(publicDir, 'favicon.ico'), icoBuffer);
+    console.log('  ✓ Generated favicon.ico (multi-resolution ICO format)');
 
     console.log('✅ Favicon generation complete!\n');
   } catch (error) {
