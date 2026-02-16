@@ -13,6 +13,7 @@ out/
 .cache/
 public/build/
 .astro/
+.lighthouseci/
 
 # Environment files
 .env

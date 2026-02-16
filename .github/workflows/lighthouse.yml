@@ -2,9 +2,13 @@ name: Lighthouse CI
 
 on:
   pull_request:
-    branches: [main]
+    branches:
+      - main
+      - 'v*'
   push:
-    branches: [main]
+    branches:
+      - main
+      - 'v*'
 
 jobs:
   lighthouse:
