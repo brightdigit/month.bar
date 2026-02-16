@@ -1,0 +1,11 @@
+---
+import { getEntry } from 'astro:content';
+import ContentLayout from '../layouts/ContentLayout.astro';
+
+const entry = await getEntry('docs', 'terms');
+const { Content } = await entry.render();
+---
+
+<ContentLayout title="Terms of Use" description={entry.data.description}>
+  <Content />
+</ContentLayout>

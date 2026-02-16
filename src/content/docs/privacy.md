@@ -51,8 +51,7 @@ If this privacy policy changes, the updated policy will be posted at this URL wi
 
 ## Contact
 
-For questions about this privacy policy or the app:
-- GitHub Issues: https://github.com/brightdigit/MonthBar/issues
+For questions about this privacy policy or the app, please visit our [Support page](/support).
 
 ## Consent
 

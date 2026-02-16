@@ -1,0 +1,80 @@
+---
+title: "Terms of Use"
+description: "MonthBar terms of use and end-user license agreement"
+lastUpdated: 2026-02-16
+---
+
+# Terms of Use for MonthBar
+
+**Effective Date**: February 16, 2026
+**Last Updated**: February 16, 2026
+
+## Acceptance of Terms
+
+By downloading, installing, or using MonthBar ("the App"), you agree to these Terms of Use. If you do not agree, do not use the App.
+
+## License Grant
+
+Subject to your compliance with these terms, BrightDigit LLC grants you a limited, non-exclusive, non-transferable, revocable license to download, install, and use the App for personal, non-commercial use on macOS devices you own or control.
+
+## Permitted Use
+
+You may:
+- Install and use the App on macOS devices you own or control
+- Use the App for personal productivity and time tracking
+- Uninstall the App at any time
+
+## Restrictions
+
+You may not:
+- Modify, reverse engineer, decompile, or disassemble the App
+- Distribute, sublicense, rent, lease, or lend the App
+- Remove or alter any proprietary notices or labels
+- Use the App for any unlawful purpose
+- Attempt to circumvent any security features
+
+## Intellectual Property
+
+The App and all related materials, including but not limited to software, design, graphics, and documentation, are owned by BrightDigit LLC and protected by copyright and other intellectual property laws.
+
+## Warranty Disclaimer
+
+THE APP IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. TO THE MAXIMUM EXTENT PERMITTED BY LAW, BRIGHTDIGIT LLC DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+## Limitation of Liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, BRIGHTDIGIT LLC SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES.
+
+## Privacy
+
+Your use of the App is also governed by our [Privacy Policy](/privacy), which is incorporated into these terms by reference.
+
+## Updates and Modifications
+
+BrightDigit LLC may update the App from time to time. These terms apply to all versions and updates. We reserve the right to modify these terms at any time. Continued use after changes constitutes acceptance of the modified terms.
+
+## Termination
+
+Your license to use the App automatically terminates if you violate these terms. Upon termination, you must cease all use and delete all copies of the App.
+
+## Governing Law
+
+These terms are governed by the laws of the United States and the State of Michigan, without regard to conflict of law provisions.
+
+## App Store Terms
+
+If you download the App through the Apple App Store, you also agree to Apple's Licensed Application End User License Agreement (EULA), which can be found at: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+
+## Contact
+
+For questions about these terms:
+- Support: Visit our [Support page](/support)
+- Website: https://month.bar
+
+## Entire Agreement
+
+These terms, together with the Privacy Policy, constitute the entire agreement between you and BrightDigit LLC regarding the App.
+
+---
+
+© 2026 BrightDigit LLC. All rights reserved.
