@@ -6,8 +6,10 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "npm run generate:favicons",
     "build": "astro build",
     "preview": "astro preview",
+    "generate:favicons": "node scripts/generate-favicons.js",
     "generate:placeholders": "node scripts/generate-placeholders.js",
     "lighthouse": "lhci autorun"
   },
