@@ -69,7 +69,7 @@ A: MonthBar automatically detects month changes based on your system calendar. I
 ### Beta Testing (TestFlight)
 
 **Q: How do I join the beta?**
-A: Use this TestFlight link: [https://testflight.apple.com/join/N8n1fSPE](https://testflight.apple.com/join/N8n1fSPE)
+A: Use this TestFlight link: [Join the MonthBar beta on TestFlight](https://testflight.apple.com/join/N8n1fSPE)
 
 **Q: How do I report beta bugs?**
 A: Please use the TestFlight feedback feature within the app, or email [support@brightdigit.com](mailto:support@brightdigit.com). Include your macOS version and a description of the issue.
