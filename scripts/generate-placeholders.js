@@ -272,5 +272,5 @@ for (let i = 1; i <= 3; i++) {
 
 console.log('\n✅ All SVG placeholder images generated successfully!');
 console.log('\nNote: These are SVG placeholders for development.');
-console.log('Real PNG assets exist in public/images/app-icon/appicon-exports/');
+console.log('Using optimized app icons from public/images/app-icon/');
 console.log('Replace placeholders with production assets when ready.\n');
