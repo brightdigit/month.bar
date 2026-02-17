@@ -6,7 +6,6 @@
  */
 
 import sharp from 'sharp';
-import toIco from 'to-ico';
 import { writeFileSync, mkdirSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
@@ -22,6 +21,36 @@ const favicons = [
   { name: 'favicon-32x32.png', size: 32 },
   { name: 'apple-touch-icon.png', size: 180 }
 ];
+
+function encodeIco(pngBuffers, sizes) {
+  const count = pngBuffers.length;
+
+  const header = Buffer.alloc(6);
+  header.writeUInt16LE(0, 0);     // reserved
+  header.writeUInt16LE(1, 2);     // type: 1 = ICO
+  header.writeUInt16LE(count, 4); // number of images
+
+  const dataOffset = 6 + count * 16;
+  const directoryEntries = [];
+  let currentOffset = dataOffset;
+
+  for (let i = 0; i < count; i++) {
+    const size = sizes[i];
+    const entry = Buffer.alloc(16);
+    entry.writeUInt8(size >= 256 ? 0 : size, 0);  // width
+    entry.writeUInt8(size >= 256 ? 0 : size, 1);  // height
+    entry.writeUInt8(0, 2);                        // color count (true color)
+    entry.writeUInt8(0, 3);                        // reserved
+    entry.writeUInt16LE(1, 4);                     // color planes
+    entry.writeUInt16LE(32, 6);                    // bits per pixel
+    entry.writeUInt32LE(pngBuffers[i].length, 8);  // data size
+    entry.writeUInt32LE(currentOffset, 12);        // data offset
+    directoryEntries.push(entry);
+    currentOffset += pngBuffers[i].length;
+  }
+
+  return Buffer.concat([header, ...directoryEntries, ...pngBuffers]);
+}
 
 console.log('🎨 Generating favicons...');
 
@@ -60,7 +89,7 @@ async function generateFavicons() {
     }
 
     // Create proper multi-resolution ICO file
-    const icoBuffer = await toIco(icoBuffers);
+    const icoBuffer = encodeIco(icoBuffers, icoSizes);
     writeFileSync(join(publicDir, 'favicon.ico'), icoBuffer);
     console.log('  ✓ Generated favicon.ico (multi-resolution ICO format)');
 
