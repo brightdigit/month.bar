@@ -106,7 +106,7 @@
   }
 
   a {
-    @apply text-apple-blue hover:opacity-80 transition-opacity;
+    @apply text-apple-blue dark:text-[#0A84FF] hover:opacity-80 transition-opacity;
     transition-duration: var(--transition-fast);
   }
 
@@ -158,6 +158,11 @@
 
   .prose strong {
     @apply font-semibold text-apple-gray-900 dark:text-apple-gray-50;
+  }
+
+  .prose a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
 
   .btn {

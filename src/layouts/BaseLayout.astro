@@ -22,7 +22,14 @@ const socialImageURL = new URL(image, Astro.site);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; font-src 'self'; connect-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self';" />
+
+    <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/app-icon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/app-icon/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/app-icon/apple-touch-icon.png" />
+
     <meta name="generator" content={Astro.generator} />
 
     <!-- Primary Meta Tags -->
@@ -69,14 +76,22 @@ const socialImageURL = new URL(image, Astro.site);
         <nav class="container py-4">
           <div class="flex items-center justify-between">
             <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <img
-                src="/images/app-icon/icon-512.png"
-                alt="MonthBar Icon"
-                class="w-8 h-8 rounded-lg"
-              />
+              <picture>
+                <source srcset="/images/app-icon/icon-512.webp" type="image/webp" />
+                <img
+                  src="/images/app-icon/icon-512.png"
+                  alt="MonthBar Icon"
+                  width="32"
+                  height="32"
+                  class="w-8 h-8 rounded-lg"
+                />
+              </picture>
               <span class="text-xl font-semibold text-apple-gray-900 dark:text-apple-gray-50">MonthBar</span>
             </a>
-            <div class="flex items-center gap-6">
+            <div class="hidden sm:flex items-center gap-6">
+              <a href="https://testflight.apple.com/join/N8n1fSPE" target="_blank" rel="noopener noreferrer" class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue transition-colors">Join TestFlight</a>
+              <a href="/support" class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue transition-colors">Support</a>
+              <a href="/terms" class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue transition-colors">Terms</a>
               <a href="/privacy" class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue transition-colors">Privacy</a>
             </div>
           </div>
@@ -94,6 +109,26 @@ const socialImageURL = new URL(image, Astro.site);
               © 2026 BrightDigit. All rights reserved.
             </div>
             <div class="flex items-center gap-6 text-sm">
+              <a
+                href="https://testflight.apple.com/join/N8n1fSPE"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-apple-gray-600 dark:text-apple-gray-400 hover:text-apple-blue transition-colors"
+              >
+                Join TestFlight
+              </a>
+              <a
+                href="/support"
+                class="text-apple-gray-600 dark:text-apple-gray-400 hover:text-apple-blue transition-colors"
+              >
+                Support
+              </a>
+              <a
+                href="/terms"
+                class="text-apple-gray-600 dark:text-apple-gray-400 hover:text-apple-blue transition-colors"
+              >
+                Terms of Use
+              </a>
               <a
                 href="/privacy"
                 class="text-apple-gray-600 dark:text-apple-gray-400 hover:text-apple-blue transition-colors"
