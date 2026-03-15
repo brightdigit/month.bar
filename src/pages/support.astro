@@ -4,8 +4,132 @@ import ContentLayout from '../layouts/ContentLayout.astro';
 
 const entry = await getEntry('docs', 'support');
 const { Content } = await entry.render();
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the system requirements for MonthBar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MonthBar requires macOS 13.0 (Ventura) or later. It's a native SwiftUI app optimized for Apple Silicon and Intel Macs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I install MonthBar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "During beta, join via TestFlight at https://testflight.apple.com/join/N8n1fSPE. Once released, download from the Mac App Store. After installation, MonthBar will appear in your MenuBar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I change the MonthBar icon style?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Click the MonthBar icon in your MenuBar, then choose between 'Pie Chart' or 'Percentage Text' in the settings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between Remaining and Elapsed display?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Remaining shows how much of the month is left, while Elapsed shows how much has passed. Toggle this in the settings menu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often does MonthBar update?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MonthBar updates every 60 seconds automatically. The progress reflects real-time calculations based on your system date and time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does MonthBar work offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! MonthBar is completely offline and never requires an internet connection. All calculations happen locally on your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What data does MonthBar collect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "None. MonthBar collects zero data. It stores only your display preferences locally using macOS UserDefaults and never transmits any information."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does MonthBar use analytics or tracking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. MonthBar has no analytics, no tracking, no crash reporting, and no third-party services."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can MonthBar track work days only?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. MonthBar offers two calculation modes: All Days (every day of the month) or Work Days Only (Monday through Friday). Switch between them in the settings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is MonthBar free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. MonthBar is completely free with no in-app purchases, no subscriptions, and no ads."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I uninstall MonthBar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quit the app from the MenuBar menu, then delete it from your Applications folder. All local preferences will be removed automatically."
+      }
+    }
+  ]
+});
+
+const howToSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to install MonthBar on your Mac",
+  "description": "Install MonthBar to track your month's progress from the macOS MenuBar.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Join TestFlight",
+      "text": "Open the TestFlight invite link (https://testflight.apple.com/join/N8n1fSPE) and accept the beta invitation.",
+      "position": 1
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Install MonthBar",
+      "text": "Install MonthBar from TestFlight. The app will download and install automatically.",
+      "position": 2
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Find MonthBar in your MenuBar",
+      "text": "After installation, MonthBar appears in your macOS MenuBar as a pie chart or percentage. Click it to configure your display preferences.",
+      "position": 3
+    }
+  ]
+});
 ---
 
 <ContentLayout title="Support" description={entry.data.description}>
   <Content />
 </ContentLayout>
+<script type="application/ld+json" set:html={faqSchema} />
+<script type="application/ld+json" set:html={howToSchema} />

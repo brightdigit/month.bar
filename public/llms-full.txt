@@ -1,0 +1,109 @@
+# MonthBar
+
+> MonthBar is a free, privacy-first macOS MenuBar app that shows how much of the current month has passed or remains, displayed as a pie chart or percentage. Built with SwiftUI by BrightDigit.
+
+MonthBar solves a simple problem: knowing where you are in the current month without opening a calendar. It lives in your macOS MenuBar and updates every 60 seconds. No network connections, no data collection, no accounts required.
+
+## Key Features
+
+- Two display styles: pie chart or percentage text
+- Two calculation modes: all days or work days only (Mon–Fri)
+- Toggle between remaining time and elapsed time
+- Real-time updates every 60 seconds
+- Completely offline — no network, no tracking, no analytics
+- Native macOS SwiftUI app with VoiceOver support
+- Free with no in-app purchases
+
+## How does MonthBar show monthly progress?
+
+Choose between a visual pie chart showing your month's progress or a simple percentage text display for at-a-glance awareness. Both styles render directly in your macOS MenuBar so you always know where you are in the month.
+
+## Why use a MenuBar month tracker?
+
+Never lose sight of where you are in the month. MonthBar lives quietly in your MenuBar, giving you instant visibility without opening calendars or counting days manually. Perfect for goal tracking, budget period awareness, and project deadline visualization.
+
+## Can I track remaining or elapsed time?
+
+Toggle between viewing remaining time (how much is left) or elapsed time (how much has passed) to match your mental model.
+
+## Does MonthBar collect any data?
+
+No. MonthBar collects zero data. No network connection, no data collection, no analytics, no tracking. All calculations are performed locally on your device. The app stores only your display preferences using macOS UserDefaults, which remain on your device and are never transmitted.
+
+## How often does MonthBar update?
+
+MonthBar updates every 60 seconds automatically. The progress reflects real-time calculations based on your system date and time.
+
+## Is MonthBar a native Mac app?
+
+Yes. MonthBar is built with Apple's SwiftUI framework for macOS. It respects system appearance (including Dark Mode), accent colors, and includes full VoiceOver accessibility support. It follows the Apple Human Interface Guidelines.
+
+## Technical Details
+
+- Platform: macOS 13.0 (Ventura) or later
+- Framework: SwiftUI
+- Architecture: MVVM with Observable models
+- Data storage: Local only (macOS UserDefaults)
+- MenuBar integration: NSStatusBar API
+- Developer: BrightDigit LLC
+
+## Frequently Asked Questions
+
+### What are the system requirements for MonthBar?
+MonthBar requires macOS 13.0 (Ventura) or later. It's a native SwiftUI app optimized for Apple Silicon and Intel Macs.
+
+### How do I install MonthBar?
+During beta, join via TestFlight (https://testflight.apple.com/join/N8n1fSPE). Once released, download from the Mac App Store. After installation, MonthBar will appear in your MenuBar.
+
+### Can MonthBar track work days only?
+Yes. MonthBar offers two calculation modes: All Days (every day of the month) or Work Days Only (Monday through Friday). Switch between them in the settings to track only business days.
+
+### Does MonthBar work offline?
+Yes! MonthBar is completely offline and never requires an internet connection. All calculations happen locally on your device.
+
+### Does MonthBar use analytics or tracking?
+No. MonthBar has no analytics, no tracking, no crash reporting, and no third-party services.
+
+### Will my settings sync across devices?
+Currently, settings are stored locally per-device using macOS UserDefaults. They do not sync via iCloud or any other service.
+
+### Is MonthBar free?
+Yes. MonthBar is completely free with no in-app purchases, no subscriptions, and no ads.
+
+### Does MonthBar support VoiceOver?
+Yes. MonthBar includes full VoiceOver accessibility support, following Apple's Accessibility guidelines.
+
+### How do I uninstall MonthBar?
+Quit the app from the MenuBar menu, then delete it from your Applications folder. All local preferences will be removed automatically.
+
+## Privacy Policy
+
+MonthBar does NOT collect, store, or transmit any personal data outside of your device. The app does not use analytics services, crash reporting services, advertising networks, or third-party tracking tools.
+
+The app stores your preferences locally using macOS UserDefaults:
+- Icon style preference (Pie Chart or Percentage Text)
+- Progress display preference (Remaining or Elapsed)
+
+This data remains on your device only, is never transmitted over the network, is not accessible to the developer, and can be reset by uninstalling the app.
+
+MonthBar does NOT connect to the internet. All month progress calculations are performed locally on your device using macOS system date and time.
+
+## Terms of Use
+
+By downloading, installing, or using MonthBar, you agree to the Terms of Use. MonthBar is provided "as is" without warranty of any kind. BrightDigit LLC grants a limited, non-exclusive, non-transferable, revocable license to download, install, and use the app for personal, non-commercial use on macOS devices you own or control.
+
+Full terms available at: https://month.bar/terms
+
+## Links
+
+- [Homepage](https://month.bar)
+- [Support & FAQ](https://month.bar/support)
+- [Privacy Policy](https://month.bar/privacy)
+- [Terms of Use](https://month.bar/terms)
+- [Join TestFlight Beta](https://testflight.apple.com/join/N8n1fSPE)
+
+## Contact
+
+- Support email: support@brightdigit.com
+- Website: https://month.bar
+- Developer: BrightDigit LLC

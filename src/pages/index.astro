@@ -13,10 +13,13 @@ import Features from '../components/Features.astro';
     <div class="container">
       <div class="max-w-3xl mx-auto text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-4 text-apple-gray-900 dark:text-apple-gray-50">
-          Simple Month Tracking
+          How do I get MonthBar?
         </h2>
+        <p class="text-lg text-apple-gray-700 dark:text-apple-gray-300 mb-4">
+          MonthBar is a free macOS MenuBar app — no subscriptions, no in-app purchases, no account required.
+        </p>
         <p class="text-lg text-apple-gray-700 dark:text-apple-gray-300 mb-8">
-          MonthBar lives quietly in your MenuBar, providing instant awareness of your monthly progress. Perfect for goal tracking, budget period awareness, and project deadline visualization.
+          Join the TestFlight beta to start tracking your month's progress today, or visit our support page for setup help and FAQs.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
@@ -37,6 +40,65 @@ import Features from '../components/Features.astro';
             Learn More
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Built With / Technology -->
+  <section class="py-16 bg-apple-gray-50 dark:bg-apple-gray-900">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-apple-gray-900 dark:text-apple-gray-50">
+          How is MonthBar built?
+        </h2>
+        <div class="prose prose-lg mx-auto text-apple-gray-700 dark:text-apple-gray-300">
+          <p>
+            MonthBar is a native macOS application built with Apple's <a href="https://developer.apple.com/xcode/swiftui/" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">SwiftUI framework</a>, following the <a href="https://developer.apple.com/design/human-interface-guidelines/" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">Apple Human Interface Guidelines</a> for a consistent Mac experience.
+          </p>
+          <p>
+            The app uses the <a href="https://developer.apple.com/documentation/appkit/nsstatusbar" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">macOS MenuBar API (NSStatusBar)</a> to display progress directly in your MenuBar. All data stays on your device using <a href="https://developer.apple.com/documentation/foundation/userdefaults" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">macOS UserDefaults</a> — no servers, no cloud sync, no accounts.
+          </p>
+          <p>
+            MonthBar follows <a href="https://developer.apple.com/documentation/accessibility" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">Apple's Accessibility guidelines</a> with full VoiceOver support and respects system appearance settings including Dark Mode and accent colors.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- References -->
+  <section class="py-12 border-t border-apple-gray-200 dark:border-apple-gray-800">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-xl font-semibold mb-6 text-apple-gray-900 dark:text-apple-gray-50">
+          References & Resources
+        </h2>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-apple-gray-600 dark:text-apple-gray-400">
+          <li>
+            <a href="https://developer.apple.com/xcode/swiftui/" target="_blank" rel="noopener noreferrer" class="hover:text-apple-blue transition-colors">Apple SwiftUI Documentation</a>
+          </li>
+          <li>
+            <a href="https://developer.apple.com/design/human-interface-guidelines/" target="_blank" rel="noopener noreferrer" class="hover:text-apple-blue transition-colors">Apple Human Interface Guidelines</a>
+          </li>
+          <li>
+            <a href="https://developer.apple.com/documentation/appkit/nsstatusbar" target="_blank" rel="noopener noreferrer" class="hover:text-apple-blue transition-colors">macOS MenuBar API (NSStatusBar)</a>
+          </li>
+          <li>
+            <a href="https://developer.apple.com/documentation/foundation/userdefaults" target="_blank" rel="noopener noreferrer" class="hover:text-apple-blue transition-colors">macOS UserDefaults Documentation</a>
+          </li>
+          <li>
+            <a href="https://developer.apple.com/documentation/accessibility" target="_blank" rel="noopener noreferrer" class="hover:text-apple-blue transition-colors">Apple Accessibility Framework</a>
+          </li>
+          <li>
+            <a href="https://developer.apple.com/app-store/review/guidelines/" target="_blank" rel="noopener noreferrer" class="hover:text-apple-blue transition-colors">App Store Review Guidelines</a>
+          </li>
+          <li>
+            <a href="https://developer.apple.com/privacy/" target="_blank" rel="noopener noreferrer" class="hover:text-apple-blue transition-colors">Apple Privacy Overview</a>
+          </li>
+          <li>
+            <a href="https://testflight.apple.com/join/N8n1fSPE" target="_blank" rel="noopener noreferrer" class="hover:text-apple-blue transition-colors">MonthBar TestFlight Beta</a>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
