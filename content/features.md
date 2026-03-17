@@ -18,7 +18,6 @@ A macOS MenuBar application that displays the progress of the current month at a
 
 - **Calculation Modes**
   - **All Days**: Calculate progress based on all calendar days in the month
-  - **Work Days (Mon-Fri)**: Calculate progress based only on weekdays, excluding weekends
 
 - **Progress Display**
   - **Remaining**: Show how much time is left in the month

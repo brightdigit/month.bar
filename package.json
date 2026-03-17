@@ -12,6 +12,7 @@
     "generate:favicons": "node scripts/generate-favicons.js",
     "generate:presskit": "node scripts/generate-press-kit-zip.js",
     "generate:placeholders": "node scripts/generate-placeholders.js",
+    "validate-schema": "node scripts/validate-schema.mjs",
     "lighthouse": "lhci autorun"
   },
   "repository": {

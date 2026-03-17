@@ -9,12 +9,44 @@ interface Props {
 
 const {
   title = 'MonthBar - Track your month\'s progress',
-  description = 'Stay aware of how much of the month has passed with MonthBar, a minimal macOS MenuBar app that shows your monthly progress at a glance.',
+  description = 'MonthBar shows you exactly how much of the current month has passed or remains, displayed as a pie chart or percentage right in your macOS MenuBar — free, private, and always up to date.',
   image = '/images/app-icon/og-image.png'
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const socialImageURL = new URL(image, Astro.site);
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "MonthBar",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "macOS 14.0 or later",
+  "url": "https://month.bar",
+  "downloadUrl": "https://testflight.apple.com/join/N8n1fSPE",
+  "softwareVersion": "1.0.0-beta.1",
+  "datePublished": "2026-02-10",
+  "dateModified": new Date().toISOString().split('T')[0],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "MonthBar shows you exactly how much of the current month has passed or remains, displayed as a pie chart or percentage right in your macOS MenuBar — free, private, and always up to date.",
+  "author": {
+    "@type": "Organization",
+    "name": "BrightDigit LLC",
+    "url": "https://brightdigit.com"
+  },
+  "featureList": [
+    "Pie chart or percentage text display",
+    "Toggle remaining or elapsed time",
+    "Real-time updates every 60 seconds",
+    "Completely offline — no network, no tracking",
+    "Native macOS SwiftUI with VoiceOver support",
+    "Free with no in-app purchases"
+  ]
+};
 ---
 
 <!DOCTYPE html>
@@ -57,21 +89,7 @@ const socialImageURL = new URL(image, Astro.site);
     <meta property="twitter:image" content={socialImageURL} />
 
     <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "MonthBar",
-        "applicationCategory": "ProductivityApplication",
-        "operatingSystem": "macOS",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Stay aware of how much of the month has passed with MonthBar, a minimal macOS MenuBar app that shows your monthly progress at a glance."
-      }
-    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)}></script>
   </head>
   <body>
     <div class="min-h-screen flex flex-col">

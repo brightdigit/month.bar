@@ -15,6 +15,11 @@ import Features from '../components/Features.astro';
         <h2 class="text-3xl md:text-4xl font-bold mb-4 text-apple-gray-900 dark:text-apple-gray-50">
           Simple Month Tracking
         </h2>
+        <!-- LLM SEO: question-based alternate heading and answer -->
+        <div class="sr-only">
+          <p>How do I get MonthBar?</p>
+          <p>MonthBar is a free macOS MenuBar app — no subscriptions, no in-app purchases, no account required. Join the TestFlight beta to start tracking your month's progress today, or visit the support page for setup help and FAQs.</p>
+        </div>
         <p class="text-lg text-apple-gray-700 dark:text-apple-gray-300 mb-8">
           MonthBar lives quietly in your MenuBar, providing instant awareness of your monthly progress. Perfect for goal tracking, budget period awareness, and project deadline visualization.
         </p>
@@ -40,4 +45,19 @@ import Features from '../components/Features.astro';
       </div>
     </div>
   </section>
+
+  <!-- Built With / Technology (visually hidden, LLM SEO) -->
+  <section class="sr-only">
+    <h2>How is MonthBar built?</h2>
+    <p>
+      MonthBar is a native macOS application built with Apple's <a href="https://developer.apple.com/xcode/swiftui/" target="_blank" rel="noopener noreferrer">SwiftUI framework</a>, following the <a href="https://developer.apple.com/design/human-interface-guidelines/" target="_blank" rel="noopener noreferrer">Apple Human Interface Guidelines</a> for a consistent Mac experience.
+    </p>
+    <p>
+      The app uses the <a href="https://developer.apple.com/documentation/appkit/nsstatusbar" target="_blank" rel="noopener noreferrer">macOS MenuBar API (NSStatusBar)</a> to display progress directly in your MenuBar. All data stays on your device using <a href="https://developer.apple.com/documentation/foundation/userdefaults" target="_blank" rel="noopener noreferrer">macOS UserDefaults</a> — no servers, no cloud sync, no accounts.
+    </p>
+    <p>
+      MonthBar follows <a href="https://developer.apple.com/documentation/accessibility" target="_blank" rel="noopener noreferrer">Apple's Accessibility guidelines</a> with full VoiceOver support and respects system appearance settings including Dark Mode and accent colors.
+    </p>
+  </section>
+
 </BaseLayout>
