@@ -19,7 +19,7 @@ Get help with MonthBar, a macOS MenuBar app that tracks your monthly progress.
 ### Installation & Setup
 
 **Q: What are the system requirements for MonthBar?**
-A: MonthBar requires [macOS 13.0 (Ventura)](https://support.apple.com/en-us/102861) or later. It's a native [SwiftUI](https://developer.apple.com/xcode/swiftui/) app optimized for Apple Silicon and Intel Macs.
+A: MonthBar requires [macOS 14.0 (Sonoma)](https://support.apple.com/en-us/109034) or later. It's a native [SwiftUI](https://developer.apple.com/xcode/swiftui/) app optimized for Apple Silicon and Intel Macs.
 
 **Q: How do I install MonthBar?**
 A: During beta, join via [TestFlight](https://testflight.apple.com/join/N8n1fSPE). Once released, download from the Mac App Store. After installation, MonthBar will appear in your MenuBar.
@@ -34,9 +34,6 @@ A: Click the MonthBar icon in your MenuBar, then choose between "Pie Chart" or "
 
 **Q: What's the difference between "Remaining" and "Elapsed" display?**
 A: "Remaining" shows how much of the month is left, while "Elapsed" shows how much has passed. Toggle this in the settings menu.
-
-**Q: Can MonthBar track work days only?**
-A: Yes. MonthBar offers two calculation modes: All Days (every day of the month) or Work Days Only (Monday through Friday). Switch between them in the settings to track only business days.
 
 **Q: How often does the progress update?**
 A: MonthBar updates every 60 seconds automatically. The progress reflects real-time calculations based on your system date and time.

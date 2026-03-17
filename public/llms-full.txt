@@ -7,7 +7,6 @@ MonthBar solves a simple problem: knowing where you are in the current month wit
 ## Key Features
 
 - Two display styles: pie chart or percentage text
-- Two calculation modes: all days or work days only (Mon–Fri)
 - Toggle between remaining time and elapsed time
 - Real-time updates every 60 seconds
 - Completely offline — no network, no tracking, no analytics
@@ -40,7 +39,7 @@ Yes. MonthBar is built with Apple's SwiftUI framework for macOS. It respects sys
 
 ## Technical Details
 
-- Platform: macOS 13.0 (Ventura) or later
+- Platform: macOS 14.0 (Sonoma) or later
 - Framework: SwiftUI
 - Architecture: MVVM with Observable models
 - Data storage: Local only (macOS UserDefaults)
@@ -50,13 +49,10 @@ Yes. MonthBar is built with Apple's SwiftUI framework for macOS. It respects sys
 ## Frequently Asked Questions
 
 ### What are the system requirements for MonthBar?
-MonthBar requires macOS 13.0 (Ventura) or later. It's a native SwiftUI app optimized for Apple Silicon and Intel Macs.
+MonthBar requires macOS 14.0 (Sonoma) or later. It's a native SwiftUI app optimized for Apple Silicon and Intel Macs.
 
 ### How do I install MonthBar?
 During beta, join via TestFlight (https://testflight.apple.com/join/N8n1fSPE). Once released, download from the Mac App Store. After installation, MonthBar will appear in your MenuBar.
-
-### Can MonthBar track work days only?
-Yes. MonthBar offers two calculation modes: All Days (every day of the month) or Work Days Only (Monday through Friday). Switch between them in the settings to track only business days.
 
 ### Does MonthBar work offline?
 Yes! MonthBar is completely offline and never requires an internet connection. All calculations happen locally on your device.

@@ -7,7 +7,6 @@ MonthBar solves a simple problem: knowing where you are in the current month wit
 ## Key Features
 
 - Two display styles: pie chart or percentage text
-- Two calculation modes: all days or work days only (Mon–Fri)
 - Toggle between remaining time and elapsed time
 - Real-time updates every 60 seconds
 - Completely offline — no network, no tracking, no analytics
@@ -24,7 +23,7 @@ MonthBar solves a simple problem: knowing where you are in the current month wit
 
 ## Technical Details
 
-- Platform: macOS 13.0 (Ventura) or later
+- Platform: macOS 14.0 (Sonoma) or later
 - Framework: SwiftUI
 - Architecture: MVVM with Observable models
 - Data storage: Local only (macOS UserDefaults)
