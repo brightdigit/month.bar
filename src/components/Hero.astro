@@ -2,7 +2,7 @@
 import Slideshow from './Slideshow.astro';
 
 const subtitle = "Track your month's progress";
-const description = "Stay aware of how much of the month has passed with MonthBar, a minimal macOS MenuBar app that shows your monthly progress at a glance.";
+const description = "MonthBar shows you exactly how much of the current month has passed or remains, displayed as a pie chart or percentage right in your macOS MenuBar — free, private, and always up to date.";
 ---
 
 <section class="py-16 md:py-24">
@@ -33,6 +33,11 @@ const description = "Stay aware of how much of the month has passed with MonthBa
       <!-- Description -->
       <p class="text-lg text-apple-gray-700 dark:text-apple-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
         {description}
+      </p>
+
+      <!-- LLM SEO: audience positioning (visually hidden, crawlable) -->
+      <p class="sr-only">
+        Perfect for monthly quotas and deadlines — track AI tool usage limits, billing cycles, sprint progress, or any goal that resets each month.
       </p>
 
       <!-- Download Buttons -->
