@@ -14,14 +14,17 @@ const { interval = 3000, pauseOnHover = true } = Astro.props;
 const screenshots: Screenshot[] = [
   { name: 'pie-elapsed', alt: 'MonthBar with pie chart showing elapsed time' },
   { name: 'pie-remaining', alt: 'MonthBar with pie chart showing remaining time' },
+  { name: 'pie-elapsed-menu', alt: 'MonthBar pie chart elapsed time with menu open' },
+  { name: 'pie-remaining-menu', alt: 'MonthBar pie chart remaining time with menu open' },
   { name: 'percent-elapsed', alt: 'MonthBar with percentage showing elapsed time' },
   { name: 'percent-remaining', alt: 'MonthBar with percentage showing remaining time' },
-  { name: 'no-menu', alt: 'MonthBar in MenuBar without menu open' }
+  { name: 'percent-elapsed-menu', alt: 'MonthBar percentage elapsed time with menu open' },
+  { name: 'percent-remaining-menu', alt: 'MonthBar percentage remaining time with menu open' },
 ];
 ---
 
 <div
-  class="slideshow-container overflow-hidden relative bg-apple-gray-50 dark:bg-apple-gray-900"
+  class="slideshow-container overflow-hidden relative"
   role="region"
   aria-label="App screenshots slideshow"
   aria-live="polite"
@@ -29,7 +32,7 @@ const screenshots: Screenshot[] = [
   data-pause-on-hover={pauseOnHover}
 >
   {screenshots.map((screenshot, index) => (
-    <picture class={`slideshow-image ${index === 0 ? 'active' : ''}`} data-index={index}>
+    <picture class={`slideshow-image ${index === 0 ? 'active' : ''} ${screenshot.name.endsWith('-menu') ? '' : 'no-menu'}`} data-index={index}>
       <source
         media="(prefers-color-scheme: dark)"
         srcset={`/images/screenshots/dark-mode/${screenshot.name}.webp`}
@@ -39,7 +42,7 @@ const screenshots: Screenshot[] = [
         alt={screenshot.alt}
         width="1600"
         height="1000"
-        class="w-full h-auto"
+        class=""
         loading={index === 0 ? 'eager' : 'lazy'}
         onerror="this.style.opacity='0.3'; this.alt='Screenshot not yet available';"
       />
@@ -51,6 +54,13 @@ const screenshots: Screenshot[] = [
   .slideshow-container {
     position: relative;
     aspect-ratio: 16 / 10;
+    background-color: #E8F4FD;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .slideshow-container {
+      background-color: #1A1A2E;
+    }
   }
 
   .slideshow-image {
@@ -62,22 +72,21 @@ const screenshots: Screenshot[] = [
     opacity: 0;
     transition: opacity 0.8s ease-in-out;
     pointer-events: none;
+    z-index: 1;
   }
 
   .slideshow-image img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    object-position: top right;
   }
+
 
   .slideshow-image.active {
     opacity: 1;
     pointer-events: auto;
-    z-index: 1;
-  }
-
-  .slideshow-image:first-child {
-    position: relative;
+    z-index: 2;
   }
 
   /* Respect user's motion preferences */
@@ -89,6 +98,9 @@ const screenshots: Screenshot[] = [
 </style>
 
 <script>
+  // Scale factor to match no-menu strip width to menu slide width
+  const NO_MENU_SCALE = 0.69;
+
   // Slideshow with accessibility and robustness improvements
   const container = document.querySelector('.slideshow-container');
 
@@ -96,6 +108,14 @@ const screenshots: Screenshot[] = [
     console.warn('Slideshow: container not found');
   } else {
     const images = container.querySelectorAll('.slideshow-image');
+
+    // Scale no-menu slides to match menu slide width
+    images.forEach((img) => {
+      if (img.classList.contains('no-menu')) {
+        (img as HTMLElement).style.transform = `scale(${NO_MENU_SCALE})`;
+        (img as HTMLElement).style.transformOrigin = 'top right';
+      }
+    });
 
     if (images.length === 0) {
       console.warn('Slideshow: no images found');

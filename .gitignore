@@ -31,5 +31,8 @@ public/build/
 .DS_Store
 Thumbs.db
 
+# Generated build artifacts
+public/downloads/
+
 # Static Site Generator specific
 # (Add specific ignores once SSG is chosen)
