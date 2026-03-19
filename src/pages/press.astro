@@ -11,6 +11,15 @@ MonthBar displays the current month's progress right in your MenuBar. Choose bet
 
 Perfect for monthly goal tracking, budget period awareness, project deadline visualization, and time management awareness. Native macOS app built with SwiftUI.`;
 
+const iconAppearances = [
+  { name: 'Automatic', prefix: 'icon' },
+  { name: 'Dark', prefix: 'icon-dark' },
+  { name: 'Clear Light', prefix: 'icon-clear-light' },
+  { name: 'Clear Dark', prefix: 'icon-clear-dark' },
+  { name: 'Tinted Light', prefix: 'icon-tinted-light' },
+  { name: 'Tinted Dark', prefix: 'icon-tinted-dark' },
+];
+
 const screenshots = [
   { file: 'pie-elapsed', caption: 'Pie chart showing elapsed time' },
   { file: 'pie-remaining', caption: 'Pie chart showing remaining time' },
@@ -49,46 +58,34 @@ const screenshots = [
 
   <!-- App Icons -->
   <PressSection title="App Icons" id="icons" background="muted">
-    <div class="grid sm:grid-cols-2 gap-8 max-w-2xl">
-      <div class="text-center">
-        <picture>
-          <source srcset="/images/app-icon/icon-1024.webp" type="image/webp" />
-          <img
-            src="/images/app-icon/icon-1024.png"
-            alt="MonthBar App Icon 1024x1024"
-            width="1024"
-            height="1024"
-            class="w-48 h-48 rounded-3xl shadow-lg mx-auto mb-4"
-          />
-        </picture>
-        <p class="text-sm text-apple-gray-600 dark:text-apple-gray-400 mb-2">1024 &times; 1024</p>
-        <div class="flex gap-2 justify-center">
-          <a href="/images/app-icon/icon-1024.png" download class="text-sm text-apple-blue hover:underline">PNG</a>
-          <a href="/images/app-icon/icon-1024.webp" download class="text-sm text-apple-blue hover:underline">WebP</a>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {iconAppearances.map(({ name, prefix }) => (
+        <div class="text-center">
+          <picture>
+            <source srcset={`/images/app-icon/${prefix}-1024.webp`} type="image/webp" />
+            <img
+              src={`/images/app-icon/${prefix}-1024.png`}
+              alt={`MonthBar App Icon — ${name}`}
+              width="1024"
+              height="1024"
+              class="w-40 h-40 rounded-3xl shadow-lg mx-auto mb-4"
+              loading="lazy"
+            />
+          </picture>
+          <p class="font-medium text-apple-gray-900 dark:text-apple-gray-50 mb-1">{name}</p>
+          <div class="flex gap-3 justify-center text-sm">
+            <span class="text-apple-gray-500">1024:
+              <a href={`/images/app-icon/${prefix}-1024.png`} download class="text-apple-blue hover:underline">PNG</a>
+              <a href={`/images/app-icon/${prefix}-1024.webp`} download class="text-apple-blue hover:underline">WebP</a>
+            </span>
+            <span class="text-apple-gray-500">512:
+              <a href={`/images/app-icon/${prefix}-512.png`} download class="text-apple-blue hover:underline">PNG</a>
+              <a href={`/images/app-icon/${prefix}-512.webp`} download class="text-apple-blue hover:underline">WebP</a>
+            </span>
+          </div>
         </div>
-      </div>
-      <div class="text-center">
-        <picture>
-          <source srcset="/images/app-icon/icon-512.webp" type="image/webp" />
-          <img
-            src="/images/app-icon/icon-512.png"
-            alt="MonthBar App Icon 512x512"
-            width="512"
-            height="512"
-            class="w-48 h-48 rounded-3xl shadow-lg mx-auto mb-4"
-          />
-        </picture>
-        <p class="text-sm text-apple-gray-600 dark:text-apple-gray-400 mb-2">512 &times; 512</p>
-        <div class="flex gap-2 justify-center">
-          <a href="/images/app-icon/icon-512.png" download class="text-sm text-apple-blue hover:underline">PNG</a>
-          <a href="/images/app-icon/icon-512.webp" download class="text-sm text-apple-blue hover:underline">WebP</a>
-        </div>
-      </div>
+      ))}
     </div>
-    <p class="text-sm text-apple-gray-500 dark:text-apple-gray-400 mt-6">
-      <!-- TODO: SVG icon coming soon -->
-      SVG version of the app icon is coming soon.
-    </p>
   </PressSection>
 
   <!-- Screenshots -->
@@ -172,6 +169,7 @@ const screenshots = [
           ['Platform', 'macOS'],
           ['Price', 'Free'],
           ['Category', 'Productivity'],
+          ['Minimum OS', 'macOS 14.0 (Sonoma)'],
           ['Website', 'https://month.bar'],
         ].map(([term, def]) => (
           <div class="flex px-6 py-3">
@@ -223,31 +221,6 @@ const screenshots = [
           -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
         </p>
       </div>
-
-      <!-- Logo Usage -->
-      <div>
-        <h3 class="text-lg font-semibold mb-4 text-apple-gray-900 dark:text-apple-gray-50">Logo Usage</h3>
-        <div class="grid sm:grid-cols-2 gap-6">
-          <div>
-            <h4 class="font-medium text-apple-gray-900 dark:text-apple-gray-50 mb-2">Do</h4>
-            <ul class="text-sm text-apple-gray-700 dark:text-apple-gray-300 space-y-1 list-disc list-inside">
-              <li>Use the provided app icon files</li>
-              <li>Maintain the original aspect ratio</li>
-              <li>Use on clean, uncluttered backgrounds</li>
-              <li>Allow sufficient clear space around the icon</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-medium text-apple-gray-900 dark:text-apple-gray-50 mb-2">Don't</h4>
-            <ul class="text-sm text-apple-gray-700 dark:text-apple-gray-300 space-y-1 list-disc list-inside">
-              <li>Alter the icon colors or shape</li>
-              <li>Add effects such as shadows or gradients</li>
-              <li>Stretch or distort the icon</li>
-              <li>Place on busy or low-contrast backgrounds</li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
   </PressSection>
 
@@ -260,10 +233,6 @@ const screenshots = [
       <a href="mailto:press@month.bar" class="text-apple-blue hover:underline font-medium mb-6 inline-block">
         press@month.bar
       </a>
-      <div class="flex gap-6 text-sm">
-        <a href="https://month.bar" class="text-apple-blue hover:underline">Website</a>
-        <a href="https://github.com/brightdigit/MonthBar" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">GitHub</a>
-      </div>
     </div>
   </PressSection>
 </BaseLayout>
