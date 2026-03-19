@@ -298,9 +298,17 @@ const screenshots = [
       const el = document.getElementById(type === 'short' ? 'short-description' : 'long-description');
       if (!el) return;
       const text = el.textContent?.trim() ?? '';
+      const original = btn.textContent;
+      if (!navigator.clipboard) {
+        btn.textContent = 'Not supported';
+        setTimeout(() => { btn.textContent = original; }, 2000);
+        return;
+      }
       navigator.clipboard.writeText(text).then(() => {
-        const original = btn.textContent;
         btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = original; }, 2000);
+      }).catch(() => {
+        btn.textContent = 'Failed';
         setTimeout(() => { btn.textContent = original; }, 2000);
       });
     });
