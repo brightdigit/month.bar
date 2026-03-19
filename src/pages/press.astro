@@ -56,8 +56,27 @@ const screenshots = [
     </div>
   </section>
 
+  <!-- Key Features -->
+  <PressSection title="Key Features" id="features" background="muted">
+    <ul class="grid sm:grid-cols-2 gap-4 max-w-3xl">
+      {[
+        ['Pie Chart & Percentage Display', 'Choose between a visual pie chart or numeric percentage in your MenuBar'],
+        ['Elapsed or Remaining Time', 'Toggle between viewing how much of the month has passed or how much is left'],
+        ['Real-time Updates', 'Progress updates automatically every 60 seconds with millisecond precision'],
+        ['MenuBar Native', 'Lives in your MenuBar for constant, unobtrusive visibility'],
+        ['Privacy-First', 'No network connection, no data collection, no accounts required'],
+        ['Lightweight & Local', 'All settings stay on your device — nothing leaves your Mac'],
+      ].map(([title, desc]) => (
+        <li class="bg-white dark:bg-apple-gray-800 p-4 rounded-xl border border-apple-gray-200 dark:border-apple-gray-700">
+          <p class="font-semibold text-apple-gray-900 dark:text-apple-gray-50 mb-1">{title}</p>
+          <p class="text-sm text-apple-gray-600 dark:text-apple-gray-400">{desc}</p>
+        </li>
+      ))}
+    </ul>
+  </PressSection>
+
   <!-- App Icons -->
-  <PressSection title="App Icons" id="icons" background="muted">
+  <PressSection title="App Icons" id="icons">
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {iconAppearances.map(({ name, prefix }) => (
         <div class="text-center">
@@ -224,8 +243,41 @@ const screenshots = [
     </div>
   </PressSection>
 
+  <!-- About the Developer -->
+  <PressSection title="About the Developer" id="developer">
+    <div class="space-y-8 max-w-3xl">
+      <div>
+        <p class="text-apple-gray-700 dark:text-apple-gray-300 mb-4">
+          MonthBar is made by <strong class="text-apple-gray-900 dark:text-apple-gray-50">BrightDigit</strong>, an independent software studio founded by <strong class="text-apple-gray-900 dark:text-apple-gray-50">Leo Dion</strong> specializing in native Apple platform apps. BrightDigit focuses on building thoughtful, privacy-respecting tools for macOS and iOS.
+        </p>
+        <div class="flex flex-wrap gap-4 text-sm">
+          <a href="https://brightdigit.com" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">Website</a>
+          <a href="https://x.com/brightdigit" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">Twitter</a>
+          <a href="https://github.com/brightdigit" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">GitHub</a>
+          <a href="https://www.youtube.com/@brightdigit" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">YouTube</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold mb-3 text-apple-gray-900 dark:text-apple-gray-50">About Me</h3>
+        <p class="text-apple-gray-700 dark:text-apple-gray-300 mb-3">
+          Leo Dion is the founder of BrightDigit, a full-stack Swift development company he's been running since 2012. He specializes in end-to-end Swift solutions — from iOS, macOS, and watchOS to server-side Swift — and has shipped multiple App Store apps including <a href="https://getbushel.app" class="text-apple-blue hover:underline">Bushel</a> (macOS virtualization for developers) and Heartwitch (Apple Watch health streaming).
+        </p>
+        <p class="text-apple-gray-700 dark:text-apple-gray-300 mb-4">
+          Leo is an active open source contributor, hosts <a href="https://empowerapps.show" class="text-apple-blue hover:underline">EmpowerApps.show</a>, and has been speaking about Swift since its launch. He lives in Michigan with his wife Betsy and six kids.
+        </p>
+        <div class="flex flex-wrap gap-4 text-sm">
+          <a href="https://x.com/leogdion" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">Twitter</a>
+          <a href="https://github.com/leogdion" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">GitHub</a>
+          <a href="https://www.linkedin.com/in/leogdion/" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">LinkedIn</a>
+          <a href="https://c.im/@leogdion" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">Mastodon</a>
+        </div>
+      </div>
+    </div>
+  </PressSection>
+
   <!-- Contact -->
-  <PressSection title="Contact" id="contact">
+  <PressSection title="Contact" id="contact" background="muted">
     <div class="max-w-lg">
       <p class="text-apple-gray-700 dark:text-apple-gray-300 mb-4">
         For press inquiries, please reach out via email.
