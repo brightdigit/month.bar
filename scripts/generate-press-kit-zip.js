@@ -62,14 +62,20 @@ const icons = [
 const screenshots = [
   'light-mode/pie-elapsed.webp',
   'light-mode/pie-remaining.webp',
+  'light-mode/pie-elapsed-menu.webp',
+  'light-mode/pie-remaining-menu.webp',
   'light-mode/percent-elapsed.webp',
   'light-mode/percent-remaining.webp',
-  'light-mode/no-menu.webp',
+  'light-mode/percent-elapsed-menu.webp',
+  'light-mode/percent-remaining-menu.webp',
   'dark-mode/pie-elapsed.webp',
   'dark-mode/pie-remaining.webp',
+  'dark-mode/pie-elapsed-menu.webp',
+  'dark-mode/pie-remaining-menu.webp',
   'dark-mode/percent-elapsed.webp',
   'dark-mode/percent-remaining.webp',
-  'dark-mode/no-menu.webp',
+  'dark-mode/percent-elapsed-menu.webp',
+  'dark-mode/percent-remaining-menu.webp',
 ];
 
 console.log('📦 Generating press kit ZIP...');
