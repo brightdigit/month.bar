@@ -1,0 +1,22 @@
+---
+interface Props {
+  title: string;
+  id: string;
+  background?: 'default' | 'muted';
+}
+
+const { title, id, background = 'default' } = Astro.props;
+
+const bgClass = background === 'muted'
+  ? 'bg-apple-gray-50 dark:bg-apple-gray-900'
+  : '';
+---
+
+<section id={id} class:list={['py-16 md:py-20', bgClass]}>
+  <div class="container">
+    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-apple-gray-900 dark:text-apple-gray-50">
+      {title}
+    </h2>
+    <slot />
+  </div>
+</section>

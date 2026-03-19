@@ -18,14 +18,14 @@ Get help with MonthBar, a macOS MenuBar app that tracks your monthly progress.
 
 ### Installation & Setup
 
-**Q: What are the system requirements?**
-A: MonthBar requires macOS 13.0 (Ventura) or later. It's a native SwiftUI app optimized for Apple Silicon and Intel Macs.
+**Q: What are the system requirements for MonthBar?**
+A: MonthBar requires [macOS 14.0 (Sonoma)](https://support.apple.com/en-us/109034) or later. It's a native [SwiftUI](https://developer.apple.com/xcode/swiftui/) app optimized for Apple Silicon and Intel Macs.
 
 **Q: How do I install MonthBar?**
-A: During beta, join via TestFlight. Once released, download from the Mac App Store. After installation, MonthBar will appear in your MenuBar.
+A: During beta, join via [TestFlight](https://testflight.apple.com/join/N8n1fSPE). Once released, download from the Mac App Store. After installation, MonthBar will appear in your MenuBar.
 
 **Q: Why doesn't the app appear after installation?**
-A: Check your MenuBar for the MonthBar icon (a pie chart or percentage). If it's hidden, try looking in the MenuBar overflow menu (the three dots).
+A: Check your MenuBar for the MonthBar icon (a pie chart or percentage). If it's hidden, try looking in the MenuBar overflow menu (the three dots). macOS may hide MenuBar items when space is limited — see [Apple's MenuBar support page](https://support.apple.com/guide/mac-help/whats-in-the-menu-bar-mchlp1446/mac) for details.
 
 ### Usage
 
@@ -44,13 +44,16 @@ A: Yes! MonthBar is completely offline and never requires an internet connection
 ### Privacy & Security
 
 **Q: What data does MonthBar collect?**
-A: None. MonthBar collects zero data. It stores only your display preferences locally and never transmits any information. See our [Privacy Policy](/privacy) for details.
+A: None. MonthBar collects zero data. It stores only your display preferences locally using [macOS UserDefaults](https://developer.apple.com/documentation/foundation/userdefaults) and never transmits any information. See our [Privacy Policy](/privacy) for details.
 
 **Q: Does MonthBar use analytics or tracking?**
-A: No. MonthBar has no analytics, no tracking, no crash reporting, and no third-party services.
+A: No. MonthBar has no analytics, no tracking, no crash reporting, and no third-party services. This aligns with [Apple's privacy principles](https://developer.apple.com/privacy/) of data minimization and on-device processing.
 
 **Q: Will my settings sync across devices?**
-A: Currently, settings are stored locally per-device using macOS UserDefaults. They do not sync via iCloud or any other service.
+A: Currently, settings are stored locally per-device using [macOS UserDefaults](https://developer.apple.com/documentation/foundation/userdefaults). They do not sync via iCloud or any other service.
+
+**Q: Is MonthBar free?**
+A: Yes. MonthBar is completely free with no in-app purchases, no subscriptions, and no ads.
 
 ### Troubleshooting
 
@@ -65,6 +68,9 @@ A: Quit the app from the MenuBar menu, then delete it from your Applications fol
 
 **Q: The app isn't updating to the next month**
 A: MonthBar automatically detects month changes based on your system calendar. If you're experiencing issues, try quitting and restarting the app.
+
+**Q: Does MonthBar support VoiceOver?**
+A: Yes. MonthBar includes full [VoiceOver](https://developer.apple.com/documentation/accessibility) accessibility support, following [Apple's Accessibility guidelines](https://developer.apple.com/accessibility/).
 
 ### Beta Testing (TestFlight)
 

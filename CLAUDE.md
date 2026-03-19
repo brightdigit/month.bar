@@ -66,7 +66,6 @@ Contains optimized App Store copy with character counts:
 
 From `content/features.md`:
 - Two icon styles: Pie Chart and Percentage Text
-- Two calculation modes: All Days and Work Days (Mon-Fri)
 - Toggle between Remaining and Elapsed time display
 - Real-time updates (every 60 seconds)
 - Privacy-first: no network, no tracking, no accounts
@@ -75,7 +74,7 @@ From `content/features.md`:
 ### MonthBar App Architecture
 
 Built with:
-- **Platform**: macOS
+- **Platform**: macOS 14.0 (Sonoma) or later
 - **Framework**: SwiftUI
 - **Pattern**: MVVM with Observable models
 - **Core Components**:
@@ -86,13 +85,28 @@ Built with:
 
 ## Build Commands
 
-**Not yet available** - Will be added once a static site generator is chosen.
+### Using mise (Recommended)
 
-Expected pattern after SSG setup:
+This project uses [mise](https://mise.jdx.dev/) for Node.js version management. To activate Node/npm:
+
+```bash
+eval "$(mise activate zsh)"   # In zsh shell
+eval "$(mise activate bash)"  # In bash shell
+```
+
+After activation, use standard npm commands:
+
 ```bash
 npm install              # Install dependencies
 npm run dev             # Start development server
 npm run build           # Build for production
+npm run validate-schema  # Validate JSON-LD schemas in dist/
+```
+
+If using mise with commands, you can also run them in a single invocation:
+
+```bash
+eval "$(mise activate zsh)" && npm run build
 ```
 
 ## Git Workflow

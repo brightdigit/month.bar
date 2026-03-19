@@ -6,11 +6,13 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "npm run generate:favicons",
+    "prebuild": "npm run generate:favicons && npm run generate:presskit",
     "build": "astro build",
     "preview": "astro preview",
     "generate:favicons": "node scripts/generate-favicons.js",
+    "generate:presskit": "node scripts/generate-press-kit-zip.js",
     "generate:placeholders": "node scripts/generate-placeholders.js",
+    "validate-schema": "node scripts/validate-schema.mjs",
     "lighthouse": "lhci autorun"
   },
   "repository": {
@@ -35,6 +37,7 @@
     "@types/node": "^25.2.3",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
+    "archiver": "^7.0.1",
     "sharp": "^0.33.0",
     "typescript": "^5.9.3"
   }

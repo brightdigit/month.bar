@@ -1,0 +1,30 @@
+# MonthBar
+
+> MonthBar is a free, privacy-first macOS MenuBar app that shows how much of the current month has passed or remains, displayed as a pie chart or percentage. Built with SwiftUI by BrightDigit.
+
+MonthBar solves a simple problem: knowing where you are in the current month without opening a calendar. It lives in your macOS MenuBar and updates every 60 seconds. No network connections, no data collection, no accounts required.
+
+## Key Features
+
+- Two display styles: pie chart or percentage text
+- Toggle between remaining time and elapsed time
+- Real-time updates every 60 seconds
+- Completely offline — no network, no tracking, no analytics
+- Native macOS SwiftUI app with VoiceOver support
+- Free with no in-app purchases
+
+## Links
+
+- [Homepage](https://month.bar)
+- [Support & FAQ](https://month.bar/support)
+- [Privacy Policy](https://month.bar/privacy)
+- [Terms of Use](https://month.bar/terms)
+- [Join TestFlight Beta](https://testflight.apple.com/join/N8n1fSPE)
+
+## Technical Details
+
+- Platform: macOS 14.0 (Sonoma) or later
+- Framework: SwiftUI
+- Architecture: MVVM with Observable models
+- Data storage: Local only (macOS UserDefaults)
+- Developer: BrightDigit LLC
