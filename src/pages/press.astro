@@ -16,8 +16,10 @@ const iconAppearances = [
   { name: 'Dark', prefix: 'icon-dark' },
   { name: 'Clear Light', prefix: 'icon-clear-light' },
   { name: 'Clear Dark', prefix: 'icon-clear-dark' },
-  { name: 'Tinted Light', prefix: 'icon-tinted-light' },
-  { name: 'Tinted Dark', prefix: 'icon-tinted-dark' },
+  { name: 'Tinted Light Blue', prefix: 'icon-tinted-light-blue' },
+  { name: 'Tinted Light Green', prefix: 'icon-tinted-light-green' },
+  { name: 'Tinted Dark Blue', prefix: 'icon-tinted-dark-blue' },
+  { name: 'Tinted Dark Green', prefix: 'icon-tinted-dark-green' },
 ];
 
 const screenshots = [
@@ -77,7 +79,7 @@ const screenshots = [
 
   <!-- App Icons -->
   <PressSection title="App Icons" id="icons">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-16">
       {iconAppearances.map(({ name, prefix }) => (
         <div class="text-center">
           <picture>
