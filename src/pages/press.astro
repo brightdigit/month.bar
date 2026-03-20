@@ -97,12 +97,12 @@ const screenshots = [
           <p class="font-medium text-apple-gray-900 dark:text-apple-gray-50 mb-1">{name}</p>
           <div class="flex gap-3 justify-center text-sm">
             <span class="text-apple-gray-500 dark:text-apple-gray-300">1024:
-              <a href={`/images/app-icon/${prefix}-1024.png`} download class="text-apple-blue dark:text-dark-mode-blue hover:underline">PNG</a>
-              <a href={`/images/app-icon/${prefix}-1024.webp`} download class="text-apple-blue dark:text-dark-mode-blue hover:underline">WebP</a>
+              <a href={`/images/app-icon/${prefix}-1024.png`} download aria-label={`Download ${name} icon PNG 1024px`} class="text-apple-blue dark:text-dark-mode-blue hover:underline">PNG</a>
+              <a href={`/images/app-icon/${prefix}-1024.webp`} download aria-label={`Download ${name} icon WebP 1024px`} class="text-apple-blue dark:text-dark-mode-blue hover:underline">WebP</a>
             </span>
             <span class="text-apple-gray-500 dark:text-apple-gray-300">512:
-              <a href={`/images/app-icon/${prefix}-512.png`} download class="text-apple-blue dark:text-dark-mode-blue hover:underline">PNG</a>
-              <a href={`/images/app-icon/${prefix}-512.webp`} download class="text-apple-blue dark:text-dark-mode-blue hover:underline">WebP</a>
+              <a href={`/images/app-icon/${prefix}-512.png`} download aria-label={`Download ${name} icon PNG 512px`} class="text-apple-blue dark:text-dark-mode-blue hover:underline">PNG</a>
+              <a href={`/images/app-icon/${prefix}-512.webp`} download aria-label={`Download ${name} icon WebP 512px`} class="text-apple-blue dark:text-dark-mode-blue hover:underline">WebP</a>
             </span>
           </div>
         </div>
@@ -158,7 +158,9 @@ const screenshots = [
         <div class="flex items-center justify-between mb-2">
           <h3 class="text-lg font-semibold text-apple-gray-900 dark:text-apple-gray-50">Short Description</h3>
           <button
+            type="button"
             data-copy="short"
+            aria-label="Copy short description"
             class="text-sm text-apple-blue dark:text-dark-mode-blue hover:underline cursor-pointer"
           >
             Copy
@@ -172,7 +174,9 @@ const screenshots = [
         <div class="flex items-center justify-between mb-2">
           <h3 class="text-lg font-semibold text-apple-gray-900 dark:text-apple-gray-50">Long Description</h3>
           <button
+            type="button"
             data-copy="long"
+            aria-label="Copy long description"
             class="text-sm text-apple-blue dark:text-dark-mode-blue hover:underline cursor-pointer"
           >
             Copy

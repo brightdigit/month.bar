@@ -12,6 +12,7 @@ const { name, hex, usage } = Astro.props;
   <div
     class="w-16 h-16 rounded-xl border border-apple-gray-200 dark:border-apple-gray-700 shrink-0"
     style={`background-color: ${hex};`}
+    aria-hidden="true"
   ></div>
   <div>
     <p class="font-semibold text-apple-gray-900 dark:text-apple-gray-50">{name}</p>
