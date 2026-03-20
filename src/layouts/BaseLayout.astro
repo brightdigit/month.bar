@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import LaunchBanner from '../components/LaunchBanner.astro';
-import { APP_STORE_URL, TESTFLIGHT_URL } from '../config';
+import { APP_STORE_URL, TESTFLIGHT_URL, WEBSITE_URL, COMPANY_NAME, COMPANY_NAME_LEGAL, COMPANY_WEBSITE_URL } from '../config';
 
 interface Props {
   title?: string;
@@ -24,7 +24,7 @@ const schemaData = {
   "name": "MonthBar",
   "applicationCategory": "ProductivityApplication",
   "operatingSystem": "macOS 14.0 or later",
-  "url": "https://month.bar",
+  "url": WEBSITE_URL,
   "downloadUrl": APP_STORE_URL,
   "softwareVersion": "1.0.0",
   "datePublished": "2026-02-10",
@@ -37,8 +37,8 @@ const schemaData = {
   "description": "MonthBar shows you exactly how much of the current month has passed or remains, displayed as a pie chart or percentage right in your macOS MenuBar — free, private, and always up to date.",
   "author": {
     "@type": "Organization",
-    "name": "BrightDigit LLC",
-    "url": "https://brightdigit.com"
+    "name": COMPANY_NAME_LEGAL,
+    "url": COMPANY_WEBSITE_URL
   },
   "featureList": [
     "Pie chart or percentage text display",
@@ -113,7 +113,7 @@ const schemaData = {
               <span class="text-xl font-semibold text-apple-gray-900 dark:text-apple-gray-50">MonthBar</span>
             </a>
             <div class="hidden sm:flex items-center gap-6">
-              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue transition-colors">Download on the App Store</a>
+              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue transition-colors">Download</a>
               <a href="/press" class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue transition-colors">Press</a>
               <a href="/support" class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue transition-colors">Support</a>
               <a href="/terms" class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue transition-colors">Terms</a>
@@ -131,7 +131,7 @@ const schemaData = {
         <div class="container py-8">
           <div class="flex flex-col md:flex-row items-center justify-between gap-4">
             <div class="text-sm text-apple-gray-600 dark:text-apple-gray-300">
-              © 2026 BrightDigit. All rights reserved.
+              © 2026 {COMPANY_NAME}. All rights reserved.
             </div>
             <div class="flex items-center gap-6 text-sm">
               <a
