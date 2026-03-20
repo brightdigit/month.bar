@@ -1,0 +1,19 @@
+---
+import { APP_STORE_URL } from '../config';
+---
+
+<a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer">
+  <picture>
+    <source
+      srcset="https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/white/en-us?size=250x83"
+      media="(prefers-color-scheme: dark)"
+    />
+    <img
+      src="https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/black/en-us?size=250x83"
+      alt="Download on the Mac App Store"
+      width="250"
+      height="83"
+      style="border-radius: 13px;"
+    />
+  </picture>
+</a>

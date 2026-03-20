@@ -75,17 +75,17 @@ A: Yes. MonthBar includes full [VoiceOver](https://developer.apple.com/documenta
 ### Feedback & Bug Reports
 
 **Q: How do I report a bug?**
-A: Email [support@brightdigit.com](mailto:support@brightdigit.com). Include your macOS version and a description of the issue.
+A: Email [support@month.bar](mailto:support@month.bar). Include your macOS version and a description of the issue.
 
 ## Still Need Help?
 
-If you have questions not covered here, please email [support@brightdigit.com](mailto:support@brightdigit.com).
+If you have questions not covered here, please email [support@month.bar](mailto:support@month.bar).
 
 **Provide Details**: When reporting issues, include your macOS version, app version, and steps to reproduce any problems.
 
 ## Feature Requests
 
-Have an idea to improve MonthBar? We'd love to hear it! Email [support@brightdigit.com](mailto:support@brightdigit.com) with your suggestion.
+Have an idea to improve MonthBar? We'd love to hear it! Email [support@month.bar](mailto:support@month.bar) with your suggestion.
 
 ---
 
