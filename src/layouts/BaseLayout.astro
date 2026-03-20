@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import LaunchBanner from '../components/LaunchBanner.astro';
-import { APP_STORE_URL, WEBSITE_URL, COMPANY_NAME, COMPANY_NAME_LEGAL, COMPANY_WEBSITE_URL } from '../config';
+import { APP_STORE_URL, WEBSITE_URL, COMPANY_NAME, COMPANY_NAME_LEGAL, COMPANY_WEBSITE_URL, SOFTWARE_VERSION } from '../config';
 
 interface Props {
   title?: string;
@@ -26,7 +26,7 @@ const schemaData = {
   "operatingSystem": "macOS 14.0 or later",
   "url": WEBSITE_URL,
   "downloadUrl": APP_STORE_URL,
-  "softwareVersion": "1.0.0",
+  "softwareVersion": SOFTWARE_VERSION,
   "datePublished": "2026-02-10",
   "dateModified": new Date().toISOString().split('T')[0],
   "offers": {
