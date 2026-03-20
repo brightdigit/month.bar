@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'apple-blue': '#0071e3',
+        'apple-blue': '#0066CC',
         'dark-mode-blue': '#0A84FF',
         'progress-green': '#34C759',
         'apple-gray': {
