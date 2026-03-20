@@ -42,7 +42,7 @@ const screenshots = [
         <h1 class="text-4xl md:text-5xl font-bold mb-4 text-apple-gray-900 dark:text-apple-gray-50">
           Press Kit
         </h1>
-        <p class="text-lg text-apple-gray-600 dark:text-apple-gray-400 mb-8">
+        <p class="text-lg text-apple-gray-600 dark:text-apple-gray-300 mb-8">
           Everything you need to write about MonthBar. Download brand assets, screenshots, and app information.
         </p>
         <a
@@ -71,7 +71,7 @@ const screenshots = [
       ].map(([title, desc]) => (
         <li class="bg-white dark:bg-apple-gray-800 p-4 rounded-xl border border-apple-gray-200 dark:border-apple-gray-700">
           <p class="font-semibold text-apple-gray-900 dark:text-apple-gray-50 mb-1">{title}</p>
-          <p class="text-sm text-apple-gray-600 dark:text-apple-gray-400">{desc}</p>
+          <p class="text-sm text-apple-gray-600 dark:text-apple-gray-300">{desc}</p>
         </li>
       ))}
     </ul>
@@ -83,25 +83,25 @@ const screenshots = [
       {iconAppearances.map(({ name, prefix }) => (
         <div class="text-center">
           <picture>
-            <source srcset={`/images/app-icon/${prefix}-1024.webp`} type="image/webp" />
+            <source srcset={`/images/app-icon/${prefix}-512.webp`} type="image/webp" />
             <img
-              src={`/images/app-icon/${prefix}-1024.png`}
+              src={`/images/app-icon/${prefix}-512.png`}
               alt={`MonthBar App Icon — ${name}`}
-              width="1024"
-              height="1024"
-              class="w-40 h-40 rounded-3xl shadow-lg mx-auto mb-4"
+              width="160"
+              height="160"
+              class="w-40 max-w-full aspect-square rounded-3xl shadow-lg mx-auto mb-4"
               loading="lazy"
             />
           </picture>
           <p class="font-medium text-apple-gray-900 dark:text-apple-gray-50 mb-1">{name}</p>
           <div class="flex gap-3 justify-center text-sm">
-            <span class="text-apple-gray-500">1024:
-              <a href={`/images/app-icon/${prefix}-1024.png`} download class="text-apple-blue hover:underline">PNG</a>
-              <a href={`/images/app-icon/${prefix}-1024.webp`} download class="text-apple-blue hover:underline">WebP</a>
+            <span class="text-apple-gray-500 dark:text-apple-gray-300">1024:
+              <a href={`/images/app-icon/${prefix}-1024.png`} download class="text-apple-blue dark:text-dark-mode-blue hover:underline">PNG</a>
+              <a href={`/images/app-icon/${prefix}-1024.webp`} download class="text-apple-blue dark:text-dark-mode-blue hover:underline">WebP</a>
             </span>
-            <span class="text-apple-gray-500">512:
-              <a href={`/images/app-icon/${prefix}-512.png`} download class="text-apple-blue hover:underline">PNG</a>
-              <a href={`/images/app-icon/${prefix}-512.webp`} download class="text-apple-blue hover:underline">WebP</a>
+            <span class="text-apple-gray-500 dark:text-apple-gray-300">512:
+              <a href={`/images/app-icon/${prefix}-512.png`} download class="text-apple-blue dark:text-dark-mode-blue hover:underline">PNG</a>
+              <a href={`/images/app-icon/${prefix}-512.webp`} download class="text-apple-blue dark:text-dark-mode-blue hover:underline">WebP</a>
             </span>
           </div>
         </div>
@@ -111,7 +111,7 @@ const screenshots = [
 
   <!-- Screenshots -->
   <PressSection title="Screenshots" id="screenshots">
-    <p class="text-apple-gray-600 dark:text-apple-gray-400 mb-8">
+    <p class="text-apple-gray-600 dark:text-apple-gray-300 mb-8">
       Screenshots available in both light and dark mode variants.
     </p>
 
@@ -122,10 +122,12 @@ const screenshots = [
           <img
             src={`/images/screenshots/light-mode/${file}.webp`}
             alt={`MonthBar light mode — ${caption}`}
+            width="2560"
+            height="1600"
             class="rounded-lg shadow-md border border-apple-gray-200 dark:border-apple-gray-700 w-full"
             loading="lazy"
           />
-          <figcaption class="text-xs text-apple-gray-500 dark:text-apple-gray-400 mt-2 text-center">{caption}</figcaption>
+          <figcaption class="text-xs text-apple-gray-500 dark:text-apple-gray-300 mt-2 text-center">{caption}</figcaption>
         </figure>
       ))}
     </div>
@@ -137,10 +139,12 @@ const screenshots = [
           <img
             src={`/images/screenshots/dark-mode/${file}.webp`}
             alt={`MonthBar dark mode — ${caption}`}
+            width="2560"
+            height="1600"
             class="rounded-lg shadow-md border border-apple-gray-200 dark:border-apple-gray-700 w-full"
             loading="lazy"
           />
-          <figcaption class="text-xs text-apple-gray-500 dark:text-apple-gray-400 mt-2 text-center">{caption}</figcaption>
+          <figcaption class="text-xs text-apple-gray-500 dark:text-apple-gray-300 mt-2 text-center">{caption}</figcaption>
         </figure>
       ))}
     </div>
@@ -154,7 +158,7 @@ const screenshots = [
           <h3 class="text-lg font-semibold text-apple-gray-900 dark:text-apple-gray-50">Short Description</h3>
           <button
             data-copy="short"
-            class="text-sm text-apple-blue hover:underline cursor-pointer"
+            class="text-sm text-apple-blue dark:text-dark-mode-blue hover:underline cursor-pointer"
           >
             Copy
           </button>
@@ -168,7 +172,7 @@ const screenshots = [
           <h3 class="text-lg font-semibold text-apple-gray-900 dark:text-apple-gray-50">Long Description</h3>
           <button
             data-copy="long"
-            class="text-sm text-apple-blue hover:underline cursor-pointer"
+            class="text-sm text-apple-blue dark:text-dark-mode-blue hover:underline cursor-pointer"
           >
             Copy
           </button>
@@ -196,21 +200,21 @@ const screenshots = [
           <div class="flex px-6 py-3">
             <dt class="w-32 shrink-0 font-medium text-apple-gray-900 dark:text-apple-gray-50">{term}</dt>
             <dd class="text-apple-gray-700 dark:text-apple-gray-300">
-              {term === 'Website' ? <a href={def} class="text-apple-blue hover:underline">{def}</a> : def}
+              {term === 'Website' ? <a href={def} class="text-apple-blue dark:text-progress-green hover:underline">{def}</a> : def}
             </dd>
           </div>
         ))}
         <div class="flex px-6 py-3">
           <dt class="w-32 shrink-0 font-medium text-apple-gray-900 dark:text-apple-gray-50">TestFlight</dt>
           <dd>
-            <a href="https://testflight.apple.com/join/N8n1fSPE" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">
+            <a href="https://testflight.apple.com/join/N8n1fSPE" target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-progress-green hover:underline">
               Join Beta
             </a>
           </dd>
         </div>
         <div class="flex px-6 py-3">
           <dt class="w-32 shrink-0 font-medium text-apple-gray-900 dark:text-apple-gray-50">App Store</dt>
-          <dd class="text-apple-gray-500 dark:text-apple-gray-400">Coming Soon</dd>
+          <dd class="text-apple-gray-500 dark:text-apple-gray-300">Coming Soon</dd>
         </div>
       </dl>
     </div>
@@ -223,8 +227,8 @@ const screenshots = [
       <div>
         <h3 class="text-lg font-semibold mb-4 text-apple-gray-900 dark:text-apple-gray-50">Colors</h3>
         <div class="grid sm:grid-cols-2 gap-6">
-          <ColorSwatch name="Apple Blue" hex="#0071e3" usage="Primary brand color, buttons, links" />
           <ColorSwatch name="Dark Mode Blue" hex="#0A84FF" usage="Primary color in dark mode" />
+          <ColorSwatch name="Progress Green" hex="#34C759" usage="Tinted icon accent color (light & dark green variants)" />
           <ColorSwatch name="Gray 900" hex="#1d1d1f" usage="Headings and primary text (light mode)" />
           <ColorSwatch name="Gray 50" hex="#f5f5f7" usage="Page backgrounds (light mode)" />
           <ColorSwatch name="Gray 400" hex="#86868b" usage="Secondary text" />
@@ -238,7 +242,7 @@ const screenshots = [
         <p class="text-apple-gray-700 dark:text-apple-gray-300">
           MonthBar uses the system font stack for a native feel:
         </p>
-        <p class="mt-2 font-mono text-sm text-apple-gray-600 dark:text-apple-gray-400 bg-white dark:bg-apple-gray-800 p-3 rounded-lg border border-apple-gray-200 dark:border-apple-gray-700">
+        <p class="mt-2 font-mono text-sm text-apple-gray-600 dark:text-apple-gray-300 bg-white dark:bg-apple-gray-800 p-3 rounded-lg border border-apple-gray-200 dark:border-apple-gray-700">
           -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
         </p>
       </div>
@@ -253,26 +257,26 @@ const screenshots = [
           MonthBar is made by <strong class="text-apple-gray-900 dark:text-apple-gray-50">BrightDigit</strong>, an independent software studio founded by <strong class="text-apple-gray-900 dark:text-apple-gray-50">Leo Dion</strong> specializing in native Apple platform apps. BrightDigit focuses on building thoughtful, privacy-respecting tools for macOS and iOS.
         </p>
         <div class="flex flex-wrap gap-4 text-sm">
-          <a href="https://brightdigit.com" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">Website</a>
-          <a href="https://x.com/brightdigit" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">Twitter</a>
-          <a href="https://github.com/brightdigit" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">GitHub</a>
-          <a href="https://www.youtube.com/@brightdigit" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">YouTube</a>
+          <a href="https://brightdigit.com" target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">Website</a>
+          <a href="https://x.com/brightdigit" target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">Twitter</a>
+          <a href="https://github.com/brightdigit" target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">GitHub</a>
+          <a href="https://www.youtube.com/@brightdigit" target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">YouTube</a>
         </div>
       </div>
 
       <div>
         <h3 class="text-lg font-semibold mb-3 text-apple-gray-900 dark:text-apple-gray-50">About Me</h3>
         <p class="text-apple-gray-700 dark:text-apple-gray-300 mb-3">
-          Leo Dion is the founder of BrightDigit, a full-stack Swift development company he's been running since 2012. He specializes in end-to-end Swift solutions — from iOS, macOS, and watchOS to server-side Swift — and has shipped multiple App Store apps including <a href="https://getbushel.app" class="text-apple-blue hover:underline">Bushel</a> (macOS virtualization for developers) and Heartwitch (Apple Watch health streaming).
+          Leo Dion is the founder of BrightDigit, a full-stack Swift development company he's been running since 2012. He specializes in end-to-end Swift solutions — from iOS, macOS, and watchOS to server-side Swift — and has shipped multiple App Store apps including <a href="https://getbushel.app" class="text-apple-blue dark:text-dark-mode-blue underline">Bushel</a> (macOS virtualization for developers) and Heartwitch (Apple Watch health streaming).
         </p>
         <p class="text-apple-gray-700 dark:text-apple-gray-300 mb-4">
-          Leo is an active open source contributor, hosts <a href="https://empowerapps.show" class="text-apple-blue hover:underline">EmpowerApps.show</a>, and has been speaking about Swift since its launch. He lives in Michigan with his wife Betsy and six kids.
+          Leo is an active open source contributor, hosts <a href="https://empowerapps.show" class="text-apple-blue dark:text-dark-mode-blue underline">EmpowerApps.show</a>, and has been speaking about Swift since its launch. He lives in Michigan with his wife Betsy and six kids.
         </p>
         <div class="flex flex-wrap gap-4 text-sm">
-          <a href="https://x.com/leogdion" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">Twitter</a>
-          <a href="https://github.com/leogdion" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">GitHub</a>
-          <a href="https://www.linkedin.com/in/leogdion/" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">LinkedIn</a>
-          <a href="https://c.im/@leogdion" target="_blank" rel="noopener noreferrer" class="text-apple-blue hover:underline">Mastodon</a>
+          <a href="https://x.com/leogdion" target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">Twitter</a>
+          <a href="https://github.com/leogdion" target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">GitHub</a>
+          <a href="https://www.linkedin.com/in/leogdion/" target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">LinkedIn</a>
+          <a href="https://c.im/@leogdion" target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">Mastodon</a>
         </div>
       </div>
     </div>
@@ -284,7 +288,7 @@ const screenshots = [
       <p class="text-apple-gray-700 dark:text-apple-gray-300 mb-4">
         For press inquiries, please reach out via email.
       </p>
-      <a href="mailto:press@month.bar" class="text-apple-blue hover:underline font-medium mb-6 inline-block">
+      <a href="mailto:press@month.bar" class="text-apple-blue dark:text-dark-mode-blue hover:underline font-medium mb-6 inline-block">
         press@month.bar
       </a>
     </div>
