@@ -106,7 +106,7 @@
   }
 
   a {
-    @apply text-apple-blue dark:text-[#0A84FF] hover:opacity-80 transition-opacity;
+    @apply text-apple-blue dark:text-dark-mode-blue hover:opacity-80 transition-opacity;
     transition-duration: var(--transition-fast);
   }
 
