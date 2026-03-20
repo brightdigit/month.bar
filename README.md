@@ -69,7 +69,7 @@ month.bar/
 
 The website uses a macOS-inspired design system with:
 
-- **Colors**: Apple-inspired palette with Apple Blue (#0071e3) accent
+- **Colors**: Apple-inspired palette — Apple Blue (#0071e3) for UI chrome, Dark Mode Blue (#0A84FF) for dark mode, Progress Green (#34C759) for brand accent
 - **Typography**: System font stack (-apple-system, BlinkMacSystemFont, etc.)
 - **Dark Mode**: Automatic based on system preference (prefers-color-scheme)
 - **Responsive**: Mobile-first design with breakpoints for tablet/desktop
