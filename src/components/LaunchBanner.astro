@@ -2,13 +2,14 @@
 import { APP_STORE_URL } from '../config';
 ---
 
-<div class="bg-progress-green text-apple-gray-900 text-center py-3 px-4 text-base font-medium">
+<div class="bg-progress-green dark:bg-apple-gray-800 text-apple-gray-900 dark:text-progress-green text-center py-3 px-4 text-base font-medium">
   MonthBar is now available on the Mac App Store!
   <a
     href={APP_STORE_URL}
     target="_blank"
     rel="noopener noreferrer"
-    class="ml-2 underline font-bold text-apple-gray-900 hover:no-underline"
+    aria-label="Download MonthBar on the Mac App Store"
+    class="ml-2 underline font-bold text-apple-gray-900 dark:text-progress-green hover:no-underline"
   >
     Download Free <span aria-hidden="true">→</span>
   </a>
