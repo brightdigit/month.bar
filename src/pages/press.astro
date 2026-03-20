@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PressSection from '../components/PressSection.astro';
 import ColorSwatch from '../components/ColorSwatch.astro';
+import { APP_STORE_URL } from '../config';
 
 const shortDescription = "MonthBar is a minimal macOS MenuBar app that shows your monthly progress at a glance.";
 
@@ -214,7 +215,7 @@ const screenshots = [
         </div>
         <div class="flex px-6 py-3">
           <dt class="w-32 shrink-0 font-medium text-apple-gray-900 dark:text-apple-gray-50">App Store</dt>
-          <dd class="text-apple-gray-500 dark:text-apple-gray-300">Coming Soon</dd>
+          <dd class="text-apple-gray-500 dark:text-apple-gray-300"><a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-progress-green hover:underline">Mac App Store</a></dd>
         </div>
       </dl>
     </div>

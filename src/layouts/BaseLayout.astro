@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import LaunchBanner from '../components/LaunchBanner.astro';
+import { APP_STORE_URL, TESTFLIGHT_URL } from '../config';
 
 interface Props {
   title?: string;
@@ -23,8 +25,8 @@ const schemaData = {
   "applicationCategory": "ProductivityApplication",
   "operatingSystem": "macOS 14.0 or later",
   "url": "https://month.bar",
-  "downloadUrl": "https://testflight.apple.com/join/N8n1fSPE",
-  "softwareVersion": "1.0.0-beta.1",
+  "downloadUrl": APP_STORE_URL,
+  "softwareVersion": "1.0.0",
   "datePublished": "2026-02-10",
   "dateModified": new Date().toISOString().split('T')[0],
   "offers": {
@@ -93,6 +95,7 @@ const schemaData = {
   </head>
   <body>
     <div class="min-h-screen flex flex-col">
+      <LaunchBanner />
       <header class="border-b border-apple-gray-200 dark:border-apple-gray-800">
         <nav class="container py-4">
           <div class="flex items-center justify-between">
@@ -110,7 +113,7 @@ const schemaData = {
               <span class="text-xl font-semibold text-apple-gray-900 dark:text-apple-gray-50">MonthBar</span>
             </a>
             <div class="hidden sm:flex items-center gap-6">
-              <a href="https://testflight.apple.com/join/N8n1fSPE" target="_blank" rel="noopener noreferrer" class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue transition-colors">Join TestFlight</a>
+              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue transition-colors">Download on the App Store</a>
               <a href="/press" class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue transition-colors">Press</a>
               <a href="/support" class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue transition-colors">Support</a>
               <a href="/terms" class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue transition-colors">Terms</a>
@@ -132,12 +135,12 @@ const schemaData = {
             </div>
             <div class="flex items-center gap-6 text-sm">
               <a
-                href="https://testflight.apple.com/join/N8n1fSPE"
+                href={APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-blue transition-colors"
               >
-                Join TestFlight
+                Mac App Store
               </a>
               <a
                 href="/press"
