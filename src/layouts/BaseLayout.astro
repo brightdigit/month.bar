@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import LaunchBanner from '../components/LaunchBanner.astro';
+import { APP_STORE_URL, WEBSITE_URL, COMPANY_NAME, COMPANY_NAME_LEGAL, COMPANY_WEBSITE_URL, SOFTWARE_VERSION } from '../config';
 
 interface Props {
   title?: string;
@@ -22,9 +24,9 @@ const schemaData = {
   "name": "MonthBar",
   "applicationCategory": "ProductivityApplication",
   "operatingSystem": "macOS 14.0 or later",
-  "url": "https://month.bar",
-  "downloadUrl": "https://testflight.apple.com/join/N8n1fSPE",
-  "softwareVersion": "1.0.0-beta.1",
+  "url": WEBSITE_URL,
+  "downloadUrl": APP_STORE_URL,
+  "softwareVersion": SOFTWARE_VERSION,
   "datePublished": "2026-02-10",
   "dateModified": new Date().toISOString().split('T')[0],
   "offers": {
@@ -35,8 +37,8 @@ const schemaData = {
   "description": "MonthBar shows you exactly how much of the current month has passed or remains, displayed as a pie chart or percentage right in your macOS MenuBar — free, private, and always up to date.",
   "author": {
     "@type": "Organization",
-    "name": "BrightDigit LLC",
-    "url": "https://brightdigit.com"
+    "name": COMPANY_NAME_LEGAL,
+    "url": COMPANY_WEBSITE_URL
   },
   "featureList": [
     "Pie chart or percentage text display",
@@ -54,7 +56,7 @@ const schemaData = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; font-src 'self'; connect-src 'self' https://plausible.io; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self';" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://plausible.io; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self';" />
 
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -93,8 +95,9 @@ const schemaData = {
   </head>
   <body>
     <div class="min-h-screen flex flex-col">
+      <LaunchBanner />
       <header class="border-b border-apple-gray-200 dark:border-apple-gray-800">
-        <nav class="container py-4">
+        <nav class="container py-4" aria-label="Main navigation">
           <div class="flex items-center justify-between">
             <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
               <picture>
@@ -110,7 +113,7 @@ const schemaData = {
               <span class="text-xl font-semibold text-apple-gray-900 dark:text-apple-gray-50">MonthBar</span>
             </a>
             <div class="hidden sm:flex items-center gap-6">
-              <a href="https://testflight.apple.com/join/N8n1fSPE" target="_blank" rel="noopener noreferrer" class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue transition-colors">Join TestFlight</a>
+              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue transition-colors">Download</a>
               <a href="/press" class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue transition-colors">Press</a>
               <a href="/support" class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue transition-colors">Support</a>
               <a href="/terms" class="text-apple-gray-700 dark:text-apple-gray-300 hover:text-apple-blue transition-colors">Terms</a>
@@ -128,16 +131,16 @@ const schemaData = {
         <div class="container py-8">
           <div class="flex flex-col md:flex-row items-center justify-between gap-4">
             <div class="text-sm text-apple-gray-600 dark:text-apple-gray-300">
-              © 2026 BrightDigit. All rights reserved.
+              © 2026 {COMPANY_NAME}. All rights reserved.
             </div>
             <div class="flex items-center gap-6 text-sm">
               <a
-                href="https://testflight.apple.com/join/N8n1fSPE"
+                href={APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-apple-gray-600 dark:text-apple-gray-300 hover:text-apple-blue transition-colors"
               >
-                Join TestFlight
+                Mac App Store
               </a>
               <a
                 href="/press"

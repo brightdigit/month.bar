@@ -19,7 +19,7 @@ MonthBar solves a simple problem: knowing where you are in the current month wit
 - [Support & FAQ](https://month.bar/support)
 - [Privacy Policy](https://month.bar/privacy)
 - [Terms of Use](https://month.bar/terms)
-- [Join TestFlight Beta](https://testflight.apple.com/join/N8n1fSPE)
+- [Download on the Mac App Store](https://apps.apple.com/us/app/monthbar-month-progress/id6759099775)
 
 ## Technical Details
 

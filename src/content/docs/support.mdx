@@ -4,13 +4,15 @@ description: "Get help with MonthBar and find answers to common questions"
 lastUpdated: 2026-02-16
 ---
 
+import { SUPPORT_EMAIL, COMPANY_NAME_LEGAL, WEBSITE_URL, APP_STORE_URL } from '../../config';
+
 # MonthBar Support
 
 Get help with MonthBar, a macOS MenuBar app that tracks your monthly progress.
 
 ## Quick Links
 
-- **TestFlight Beta**: [Join the beta program](https://testflight.apple.com/join/N8n1fSPE)
+- **Mac App Store**: [Download MonthBar free]({APP_STORE_URL})
 - **Privacy Policy**: [View our privacy policy](/privacy)
 - **Terms of Use**: [Read the terms](/terms)
 
@@ -22,7 +24,7 @@ Get help with MonthBar, a macOS MenuBar app that tracks your monthly progress.
 A: MonthBar requires [macOS 14.0 (Sonoma)](https://support.apple.com/en-us/109034) or later. It's a native [SwiftUI](https://developer.apple.com/xcode/swiftui/) app optimized for Apple Silicon and Intel Macs.
 
 **Q: How do I install MonthBar?**
-A: During beta, join via [TestFlight](https://testflight.apple.com/join/N8n1fSPE). Once released, download from the Mac App Store. After installation, MonthBar will appear in your MenuBar.
+A: Download MonthBar free from the [Mac App Store]({APP_STORE_URL}). After installation, MonthBar will appear in your MenuBar.
 
 **Q: Why doesn't the app appear after installation?**
 A: Check your MenuBar for the MonthBar icon (a pie chart or percentage). If it's hidden, try looking in the MenuBar overflow menu (the three dots). macOS may hide MenuBar items when space is limited — see [Apple's MenuBar support page](https://support.apple.com/guide/mac-help/whats-in-the-menu-bar-mchlp1446/mac) for details.
@@ -72,28 +74,22 @@ A: MonthBar automatically detects month changes based on your system calendar. I
 **Q: Does MonthBar support VoiceOver?**
 A: Yes. MonthBar includes full [VoiceOver](https://developer.apple.com/documentation/accessibility) accessibility support, following [Apple's Accessibility guidelines](https://developer.apple.com/accessibility/).
 
-### Beta Testing (TestFlight)
+### Feedback & Bug Reports
 
-**Q: How do I join the beta?**
-A: Use this TestFlight link: [Join the MonthBar beta on TestFlight](https://testflight.apple.com/join/N8n1fSPE)
-
-**Q: How do I report beta bugs?**
-A: Please use the TestFlight feedback feature within the app, or email [support@brightdigit.com](mailto:support@brightdigit.com). Include your macOS version and a description of the issue.
-
-**Q: When will MonthBar launch on the App Store?**
-A: We're currently in beta testing. Join the TestFlight beta to stay updated on the release timeline.
+**Q: How do I report a bug?**
+A: Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>. Include your macOS version and a description of the issue.
 
 ## Still Need Help?
 
-If you have questions not covered here, please use the TestFlight feedback feature or email [support@brightdigit.com](mailto:support@brightdigit.com).
+If you have questions not covered here, please email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
 
 **Provide Details**: When reporting issues, include your macOS version, app version, and steps to reproduce any problems.
 
 ## Feature Requests
 
-Have an idea to improve MonthBar? We'd love to hear it! Submit feature requests through the TestFlight feedback feature.
+Have an idea to improve MonthBar? We'd love to hear it! Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> with your suggestion.
 
 ---
 
-**Developer**: BrightDigit LLC
-**Website**: https://month.bar
+**Developer**: {COMPANY_NAME_LEGAL}
+**Website**: {WEBSITE_URL}

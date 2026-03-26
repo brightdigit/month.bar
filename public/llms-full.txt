@@ -52,7 +52,7 @@ Yes. MonthBar is built with Apple's SwiftUI framework for macOS. It respects sys
 MonthBar requires macOS 14.0 (Sonoma) or later. It's a native SwiftUI app optimized for Apple Silicon and Intel Macs.
 
 ### How do I install MonthBar?
-During beta, join via TestFlight (https://testflight.apple.com/join/N8n1fSPE). Once released, download from the Mac App Store. After installation, MonthBar will appear in your MenuBar.
+Download from the [Mac App Store](https://apps.apple.com/us/app/monthbar-month-progress/id6759099775). After installation, MonthBar will appear in your MenuBar.
 
 ### Does MonthBar work offline?
 Yes! MonthBar is completely offline and never requires an internet connection. All calculations happen locally on your device.
@@ -96,10 +96,10 @@ Full terms available at: https://month.bar/terms
 - [Support & FAQ](https://month.bar/support)
 - [Privacy Policy](https://month.bar/privacy)
 - [Terms of Use](https://month.bar/terms)
-- [Join TestFlight Beta](https://testflight.apple.com/join/N8n1fSPE)
+- [Download on the Mac App Store](https://apps.apple.com/us/app/monthbar-month-progress/id6759099775)
 
 ## Contact
 
-- Support email: support@brightdigit.com
+- Support email: support@month.bar
 - Website: https://month.bar
 - Developer: BrightDigit LLC

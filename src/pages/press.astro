@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PressSection from '../components/PressSection.astro';
 import ColorSwatch from '../components/ColorSwatch.astro';
+import { APP_STORE_URL, PRESS_EMAIL, COMPANY_NAME, COMPANY_NAME_LEGAL, FOUNDER_NAME, WEBSITE_URL, COMPANY_WEBSITE_URL, BRIGHTDIGIT_TWITTER_URL, BRIGHTDIGIT_GITHUB_URL, BRIGHTDIGIT_YOUTUBE_URL, LEO_TWITTER_URL, LEO_GITHUB_URL, LEO_LINKEDIN_URL, LEO_MASTODON_URL, MIN_MACOS_VERSION } from '../config';
 
 const shortDescription = "MonthBar is a minimal macOS MenuBar app that shows your monthly progress at a glance.";
 
@@ -96,12 +97,12 @@ const screenshots = [
           <p class="font-medium text-apple-gray-900 dark:text-apple-gray-50 mb-1">{name}</p>
           <div class="flex gap-3 justify-center text-sm">
             <span class="text-apple-gray-500 dark:text-apple-gray-300">1024:
-              <a href={`/images/app-icon/${prefix}-1024.png`} download class="text-apple-blue dark:text-dark-mode-blue hover:underline">PNG</a>
-              <a href={`/images/app-icon/${prefix}-1024.webp`} download class="text-apple-blue dark:text-dark-mode-blue hover:underline">WebP</a>
+              <a href={`/images/app-icon/${prefix}-1024.png`} download aria-label={`Download ${name} icon PNG 1024px`} class="text-apple-blue dark:text-dark-mode-blue hover:underline">PNG</a>
+              <a href={`/images/app-icon/${prefix}-1024.webp`} download aria-label={`Download ${name} icon WebP 1024px`} class="text-apple-blue dark:text-dark-mode-blue hover:underline">WebP</a>
             </span>
             <span class="text-apple-gray-500 dark:text-apple-gray-300">512:
-              <a href={`/images/app-icon/${prefix}-512.png`} download class="text-apple-blue dark:text-dark-mode-blue hover:underline">PNG</a>
-              <a href={`/images/app-icon/${prefix}-512.webp`} download class="text-apple-blue dark:text-dark-mode-blue hover:underline">WebP</a>
+              <a href={`/images/app-icon/${prefix}-512.png`} download aria-label={`Download ${name} icon PNG 512px`} class="text-apple-blue dark:text-dark-mode-blue hover:underline">PNG</a>
+              <a href={`/images/app-icon/${prefix}-512.webp`} download aria-label={`Download ${name} icon WebP 512px`} class="text-apple-blue dark:text-dark-mode-blue hover:underline">WebP</a>
             </span>
           </div>
         </div>
@@ -157,7 +158,9 @@ const screenshots = [
         <div class="flex items-center justify-between mb-2">
           <h3 class="text-lg font-semibold text-apple-gray-900 dark:text-apple-gray-50">Short Description</h3>
           <button
+            type="button"
             data-copy="short"
+            aria-label="Copy short description"
             class="text-sm text-apple-blue dark:text-dark-mode-blue hover:underline cursor-pointer"
           >
             Copy
@@ -171,7 +174,9 @@ const screenshots = [
         <div class="flex items-center justify-between mb-2">
           <h3 class="text-lg font-semibold text-apple-gray-900 dark:text-apple-gray-50">Long Description</h3>
           <button
+            type="button"
             data-copy="long"
+            aria-label="Copy long description"
             class="text-sm text-apple-blue dark:text-dark-mode-blue hover:underline cursor-pointer"
           >
             Copy
@@ -190,12 +195,12 @@ const screenshots = [
       <dl class="divide-y divide-apple-gray-200 dark:divide-apple-gray-700">
         {[
           ['App Name', 'MonthBar'],
-          ['Developer', 'BrightDigit'],
+          ['Developer', COMPANY_NAME],
           ['Platform', 'macOS'],
           ['Price', 'Free'],
           ['Category', 'Productivity'],
-          ['Minimum OS', 'macOS 14.0 (Sonoma)'],
-          ['Website', 'https://month.bar'],
+          ['Minimum OS', MIN_MACOS_VERSION],
+          ['Website', WEBSITE_URL],
         ].map(([term, def]) => (
           <div class="flex px-6 py-3">
             <dt class="w-32 shrink-0 font-medium text-apple-gray-900 dark:text-apple-gray-50">{term}</dt>
@@ -205,16 +210,8 @@ const screenshots = [
           </div>
         ))}
         <div class="flex px-6 py-3">
-          <dt class="w-32 shrink-0 font-medium text-apple-gray-900 dark:text-apple-gray-50">TestFlight</dt>
-          <dd>
-            <a href="https://testflight.apple.com/join/N8n1fSPE" target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-progress-green hover:underline">
-              Join Beta
-            </a>
-          </dd>
-        </div>
-        <div class="flex px-6 py-3">
           <dt class="w-32 shrink-0 font-medium text-apple-gray-900 dark:text-apple-gray-50">App Store</dt>
-          <dd class="text-apple-gray-500 dark:text-apple-gray-300">Coming Soon</dd>
+          <dd class="text-apple-gray-500 dark:text-apple-gray-300"><a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-progress-green hover:underline">Mac App Store</a></dd>
         </div>
       </dl>
     </div>
@@ -254,29 +251,29 @@ const screenshots = [
     <div class="space-y-8 max-w-3xl">
       <div>
         <p class="text-apple-gray-700 dark:text-apple-gray-300 mb-4">
-          MonthBar is made by <strong class="text-apple-gray-900 dark:text-apple-gray-50">BrightDigit</strong>, an independent software studio founded by <strong class="text-apple-gray-900 dark:text-apple-gray-50">Leo Dion</strong> specializing in native Apple platform apps. BrightDigit focuses on building thoughtful, privacy-respecting tools for macOS and iOS.
+          MonthBar is made by <strong class="text-apple-gray-900 dark:text-apple-gray-50">{COMPANY_NAME}</strong>, an independent software studio founded by <strong class="text-apple-gray-900 dark:text-apple-gray-50">{FOUNDER_NAME}</strong> specializing in native Apple platform apps. {COMPANY_NAME} focuses on building thoughtful, privacy-respecting tools for macOS and iOS.
         </p>
         <div class="flex flex-wrap gap-4 text-sm">
-          <a href="https://brightdigit.com" target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">Website</a>
-          <a href="https://x.com/brightdigit" target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">Twitter</a>
-          <a href="https://github.com/brightdigit" target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">GitHub</a>
-          <a href="https://www.youtube.com/@brightdigit" target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">YouTube</a>
+          <a href={COMPANY_WEBSITE_URL} target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">Website</a>
+          <a href={BRIGHTDIGIT_TWITTER_URL} target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">Twitter</a>
+          <a href={BRIGHTDIGIT_GITHUB_URL} target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">GitHub</a>
+          <a href={BRIGHTDIGIT_YOUTUBE_URL} target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">YouTube</a>
         </div>
       </div>
 
       <div>
         <h3 class="text-lg font-semibold mb-3 text-apple-gray-900 dark:text-apple-gray-50">About Me</h3>
         <p class="text-apple-gray-700 dark:text-apple-gray-300 mb-3">
-          Leo Dion is the founder of BrightDigit, a full-stack Swift development company he's been running since 2012. He specializes in end-to-end Swift solutions — from iOS, macOS, and watchOS to server-side Swift — and has shipped multiple App Store apps including <a href="https://getbushel.app" class="text-apple-blue dark:text-dark-mode-blue underline">Bushel</a> (macOS virtualization for developers) and Heartwitch (Apple Watch health streaming).
+          {FOUNDER_NAME} is the founder of {COMPANY_NAME}, a full-stack Swift development company he's been running since 2012. He specializes in end-to-end Swift solutions — from iOS, macOS, and watchOS to server-side Swift — and has shipped multiple App Store apps including <a href="https://getbushel.app" class="text-apple-blue dark:text-dark-mode-blue underline">Bushel</a> (macOS virtualization for developers) and Heartwitch (Apple Watch health streaming).
         </p>
         <p class="text-apple-gray-700 dark:text-apple-gray-300 mb-4">
           Leo is an active open source contributor, hosts <a href="https://empowerapps.show" class="text-apple-blue dark:text-dark-mode-blue underline">EmpowerApps.show</a>, and has been speaking about Swift since its launch. He lives in Michigan with his wife Betsy and six kids.
         </p>
         <div class="flex flex-wrap gap-4 text-sm">
-          <a href="https://x.com/leogdion" target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">Twitter</a>
-          <a href="https://github.com/leogdion" target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">GitHub</a>
-          <a href="https://www.linkedin.com/in/leogdion/" target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">LinkedIn</a>
-          <a href="https://c.im/@leogdion" target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">Mastodon</a>
+          <a href={LEO_TWITTER_URL} target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">Twitter</a>
+          <a href={LEO_GITHUB_URL} target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">GitHub</a>
+          <a href={LEO_LINKEDIN_URL} target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">LinkedIn</a>
+          <a href={LEO_MASTODON_URL} target="_blank" rel="noopener noreferrer" class="text-apple-blue dark:text-dark-mode-blue hover:underline">Mastodon</a>
         </div>
       </div>
     </div>
@@ -288,8 +285,8 @@ const screenshots = [
       <p class="text-apple-gray-700 dark:text-apple-gray-300 mb-4">
         For press inquiries, please reach out via email.
       </p>
-      <a href="mailto:press@month.bar" class="text-apple-blue dark:text-dark-mode-blue hover:underline font-medium mb-6 inline-block">
-        press@month.bar
+      <a href={`mailto:${PRESS_EMAIL}`} class="text-apple-blue dark:text-dark-mode-blue hover:underline font-medium mb-6 inline-block">
+        {PRESS_EMAIL}
       </a>
     </div>
   </PressSection>

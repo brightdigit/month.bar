@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/brightdigit/month.bar#readme",
   "dependencies": {
+    "@astrojs/mdx": "^4.3.14",
     "@astrojs/sitemap": "^3.7.0",
     "@astrojs/tailwind": "^6.0.2",
     "astro": "^5.17.2",
@@ -35,9 +36,9 @@
   "devDependencies": {
     "@lhci/cli": "^0.15.0",
     "@types/node": "^25.2.3",
+    "archiver": "^7.0.1",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
-    "archiver": "^7.0.1",
     "sharp": "^0.33.0",
     "typescript": "^5.9.3"
   }

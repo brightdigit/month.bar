@@ -28,7 +28,7 @@ Platform: macOS
 Price: Free
 Category: Productivity
 Website: https://month.bar
-TestFlight: https://testflight.apple.com/join/N8n1fSPE
+Mac App Store: https://apps.apple.com/us/app/monthbar-month-progress/id6759099775
 
 Description
 -----------

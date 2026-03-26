@@ -31,10 +31,10 @@ const breadcrumbSchema = JSON.stringify({
 <BaseLayout title={title} description={description}>
   <article class="container py-12">
     <div class="max-w-3xl mx-auto">
-      <nav class="mb-8 text-sm">
+      <nav class="mb-8 text-sm" aria-label="Breadcrumb">
         <a href="/" class="hover:opacity-80">Home</a>
-        <span class="mx-2 text-apple-gray-400">/</span>
-        <span class="text-apple-gray-600 dark:text-apple-gray-400">{title}</span>
+        <span class="mx-2 text-apple-gray-400" aria-hidden="true">/</span>
+        <span class="text-apple-gray-600 dark:text-apple-gray-400" aria-current="page">{title}</span>
       </nav>
 
       <div class="prose prose-lg">
